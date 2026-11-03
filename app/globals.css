@@ -1,18 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-charcoal: #161210;
-  --color-clove: #231b17;
-  --color-clove-soft: #2b221d;
-  --color-parchment: #fbf6ee;
-  --color-parchment-deep: #f0e7d9;
-  --color-parchment-line: #e2d6c4;
-  --color-saffron: #d99b26;
-  --color-saffron-soft: #e8be6a;
+  --color-charcoal: #14110f;
+  --color-clove: #1f1915;
+  --color-clove-soft: #2a211b;
+  --color-parchment: #fcf9f2;
+  --color-parchment-deep: #f2e9dc;
+  --color-parchment-line: #e4d8c6;
+  --color-saffron: #d4a34b;
+  --color-saffron-soft: #e5bd6f;
   --color-terracotta: #b84a27;
+  --color-forest: #0f2922;
 
-  --font-display: var(--font-playfair), "Iowan Old Style", Georgia, serif;
-  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), "Fraunces", Georgia, serif;
+  --font-sans: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: var(--font-display), "Fraunces", Georgia, serif;
+
+  --text-hero: clamp(2.35rem, 1.45rem + 3.9vw, 5.2rem);
+  --text-hero--line-height: 1.02;
+  --text-title: clamp(1.85rem, 1.25rem + 2.4vw, 3rem);
+  --text-title--line-height: 1.08;
+  --text-section: clamp(1.7rem, 1.25rem + 1.9vw, 2.6rem);
+  --text-section--line-height: 1.1;
+  --text-lead: clamp(1.05rem, 0.99rem + 0.32vw, 1.22rem);
+  --text-lead--line-height: 1.75;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -108,17 +119,17 @@
   }
 
   .display-xl {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 6.6vw, 4.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
+    font-family: var(--font-heading);
+    font-size: var(--text-hero);
+    line-height: var(--text-hero--line-height);
+    letter-spacing: -0.025em;
     color: var(--color-parchment);
   }
 
   .display-lg {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4.4vw, 3.1rem);
-    line-height: 1.08;
+    font-family: var(--font-heading);
+    font-size: var(--text-title);
+    line-height: var(--text-title--line-height);
     letter-spacing: -0.02em;
     color: var(--color-parchment);
   }

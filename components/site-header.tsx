@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, Phone, ShoppingBag, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site";
+import { CalicutParadiseLogo } from "@/components/ui/logo";
 import { useCart } from "./cart/cart-provider";
 
 export function SiteHeader() {
@@ -39,14 +40,12 @@ export function SiteHeader() {
     >
       <div className="shell flex h-16 items-center justify-between gap-4 sm:h-18">
         <Link href="/" className="group flex items-center gap-3">
-          <span className="relative grid size-9 place-items-center rounded-full border border-saffron/45 text-[13px] font-semibold tracking-[0.08em] text-saffron transition-colors group-hover:border-saffron sm:size-10 sm:text-sm">
-            {siteConfig.monogram}
-          </span>
-          <span className="leading-none">
-            <span className="block font-display text-[15px] tracking-[0.02em] text-parchment sm:text-base">
+          <CalicutParadiseLogo size={36} variant="gold" className="transition-transform duration-300 group-hover:scale-105" />
+          <span className="leading-tight">
+            <span className="block font-heading text-[16px] font-medium tracking-[0.02em] text-parchment sm:text-[18px]">
               Calicut Paradise
             </span>
-            <span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.34em] text-parchment/60">
+            <span className="block text-[9px] font-semibold uppercase tracking-[0.26em] text-saffron">
               Thrissur
             </span>
           </span>

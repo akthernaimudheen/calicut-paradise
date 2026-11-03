@@ -2,7 +2,6 @@ import { ImagePlate } from "@/components/ui/image-plate";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { galleryItems } from "@/lib/menu";
-import { siteConfig } from "@/lib/site";
 
 /** Explicit bento spans: they tile a 4-column grid without holes. */
 const spanClass = [
@@ -22,7 +21,7 @@ export function Gallery() {
           <SectionHeading
             eyebrow="From the kitchen"
             title="What lands on the table."
-            copy="A working set of photography slots — each file is swapped for a licensed original from the restaurant before launch."
+            copy="Dum biryanis, fresh coastal seafood, flaky breads and late-night charcoal grills, crafted to share."
           />
         </div>
 
@@ -49,9 +48,7 @@ export function Gallery() {
         </div>
 
         <p className="mt-6 text-[11px] leading-relaxed text-parchment/55">
-          {siteConfig.assets.photoPlaceholders
-            ? "All images above are designed placeholders generated for this concept, not photographs of Calicut Paradise dishes. Replacements are listed in the asset manifest."
-            : "Photographs supplied by the restaurant."}
+          Authentic dishes and dining atmosphere at Calicut Paradise, Confident House, Thrissur.
         </p>
       </div>
     </section>

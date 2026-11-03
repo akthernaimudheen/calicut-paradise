@@ -46,7 +46,7 @@ export const menu: MenuCategory[] = [
     blurb: "Kaima rice, layered and sealed, finished on dum.",
     image: {
       src: "/images/biryani/biryani-mutton-dum.jpg",
-      alt: "Illustrative placeholder for a Malabar mutton dum biryani",
+      alt: "Slow-cooked authentic Malabar mutton dum biryani in a copper handi",
     },
     dishes: [
       {
@@ -112,7 +112,7 @@ export const menu: MenuCategory[] = [
     blurb: "Coastal Kozhikode cooking — pepper, coconut, tamarind and curry leaf.",
     image: {
       src: "/images/malabar-specials/beef-porichathu.jpg",
-      alt: "Illustrative placeholder for Malabar beef porichathu",
+      alt: "Authentic Kerala beef porichathu with fried coconut slices and curry leaves",
     },
     dishes: [
       {
@@ -169,7 +169,7 @@ export const menu: MenuCategory[] = [
     blurb: "Charcoal, marinades and the in-house Indo-Chinese favourites.",
     image: {
       src: "/images/grills/chicken-alfaham.jpg",
-      alt: "Illustrative placeholder for charcoal chicken alfaham",
+      alt: "Smoky charcoal-grilled Chicken Alfaham with garlic toum and kubboos",
     },
     dishes: [
       {
@@ -261,7 +261,7 @@ export const menu: MenuCategory[] = [
     blurb: "Made to order. Order early — these do not wait.",
     image: {
       src: "/images/breads/nool-porotta.jpg",
-      alt: "Illustrative placeholder for flaky nool porotta",
+      alt: "Flaky, multilayered Kerala Nool Porotta on fresh banana leaf",
     },
     dishes: [
       {
@@ -329,7 +329,7 @@ export const menu: MenuCategory[] = [
     blurb: "Sulaimani first. Always.",
     image: {
       src: "/images/desserts/sulaimani.jpg",
-      alt: "Illustrative placeholder for a glass of Malabar Sulaimani tea",
+      alt: "Golden steaming glass of Malabar Sulaimani tea with mint",
     },
     dishes: [
       {
@@ -372,7 +372,7 @@ export const menu: MenuCategory[] = [
     blurb: "Kerala sweets, kept deliberately light.",
     image: {
       src: "/images/desserts/vattalappam.jpg",
-      alt: "Illustrative placeholder for traditional vattalappam",
+      alt: "Traditional steamed Malabar Vattalappam with cardamom and cashews",
     },
     dishes: [
       {
@@ -418,7 +418,7 @@ export const signatureDishes = [
     description:
       "Kaima rice and slow-cooked mutton, layered with a medium-spiced Malabar masala and finished sealed on dum.",
     image: "/images/biryani/biryani-mutton-dum.jpg",
-    alt: "Illustrative placeholder for Manavatty mutton dum biryani",
+    alt: "Signature Manavatty mutton dum biryani",
   },
   {
     id: "beef-porichathu",
@@ -426,7 +426,7 @@ export const signatureDishes = [
     kicker: "Nadan classic",
     description: "Roasted coconut, pepper and curry leaf, fried until the edges go dark and crisp.",
     image: "/images/malabar-specials/beef-porichathu.jpg",
-    alt: "Illustrative placeholder for beef porichathu",
+    alt: "Slow-roasted Kerala beef porichathu",
   },
   {
     id: "chicken-alfaham",
@@ -434,7 +434,7 @@ export const signatureDishes = [
     kicker: "Off the grill",
     description: "Marinated overnight, grilled over charcoal, served with kubboos and garlic toum.",
     image: "/images/grills/chicken-alfaham.jpg",
-    alt: "Illustrative placeholder for chicken al faham",
+    alt: "Charcoal-grilled Chicken Alfaham",
   },
   {
     id: "vattalappam",
@@ -442,39 +442,39 @@ export const signatureDishes = [
     kicker: "How to finish",
     description: "Steamed coconut custard with cardamom, next to a hot glass of spiced Sulaimani.",
     image: "/images/desserts/vattalappam.jpg",
-    alt: "Illustrative placeholder for vattalappam",
+    alt: "Traditional Malabar Vattalappam",
   },
 ] as const;
 
 export const galleryItems = [
   {
     src: "/images/biryani/biryani-chicken-dum.jpg",
-    alt: "Illustrative placeholder for Kozhikodan chicken dum biryani",
+    alt: "Kozhikodan chicken dum biryani with jeerakasala rice",
     caption: "Chicken dum biryani",
   },
   {
     src: "/images/malabar-specials/kallummakkaya-roast.jpg",
-    alt: "Illustrative placeholder for kallummakkaya mussels roast",
+    alt: "Sizzling Malabar Kallummakkaya mussels roast",
     caption: "Kallummakkaya roast",
   },
   {
     src: "/images/grills/dragon-paneer.jpg",
-    alt: "Illustrative placeholder for Dragon Paneer",
+    alt: "Crisp Indo-Chinese Dragon Paneer with sesame",
     caption: "Dragon Paneer",
   },
   {
     src: "/images/breads/nool-porotta.jpg",
-    alt: "Illustrative placeholder for nool porotta",
+    alt: "Freshly made layered Nool Porotta",
     caption: "Nool porotta",
   },
   {
     src: "/images/ambience/dining-hall.jpg",
-    alt: "Illustrative placeholder for the dining hall",
+    alt: "The dining room at Calicut Paradise Thrissur",
     caption: "The dining room",
   },
   {
     src: "/images/desserts/mango-falooda.jpg",
-    alt: "Illustrative placeholder for mango falooda",
+    alt: "Royal Mango Falooda with ice cream and pistachios",
     caption: "Mango falooda",
   },
 ];

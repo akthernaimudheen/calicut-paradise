@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site";
+import { CalicutParadiseLogo } from "@/components/ui/logo";
 
 export function SiteFooter() {
   return (
@@ -8,14 +9,12 @@ export function SiteFooter() {
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="grid size-10 place-items-center rounded-full border border-saffron/45 text-sm font-semibold tracking-[0.08em] text-saffron">
-                {siteConfig.monogram}
-              </span>
+            <div className="flex items-center gap-3.5">
+              <CalicutParadiseLogo size={44} variant="gold" />
               <span>
-                <span className="block font-display text-lg text-parchment">Calicut Paradise</span>
-                <span className="block text-[9px] uppercase tracking-[0.34em] text-parchment/60">
-                  Thrissur
+                <span className="block font-heading text-xl text-parchment">Calicut Paradise</span>
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.3em] text-saffron">
+                  Malabar Kitchen · Thrissur
                 </span>
               </span>
             </div>
@@ -31,6 +30,15 @@ export function SiteFooter() {
                 className="inline-flex items-center gap-1.5 rounded-full border border-parchment/15 px-3.5 py-2 text-xs text-parchment/65 transition-colors hover:border-saffron/50 hover:text-saffron"
               >
                 Order on Swiggy
+                <ArrowUpRight className="size-3" aria-hidden />
+              </a>
+              <a
+                href="https://instagram.com/calicutparadise"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-parchment/15 px-3.5 py-2 text-xs text-parchment/65 transition-colors hover:border-saffron/50 hover:text-saffron"
+              >
+                Instagram
                 <ArrowUpRight className="size-3" aria-hidden />
               </a>
               <a
@@ -111,8 +119,7 @@ export function SiteFooter() {
             WhatsApp order form is an enquiry only — nothing is paid or confirmed on this site.
           </p>
           <p className="mt-2">
-            Independent website concept prepared for Calicut Paradise, Thrissur. Not an official
-            site — pending restaurant approval. Photography slots are placeholders.
+            Confident House, 622 Ikkanda Warrior Road, Kokkala, Veliyannur, Thrissur, Kerala 680021. Authentic Malabar &amp; Kerala Dining.
           </p>
           <p className="mt-4 text-parchment/50">
             © {new Date().getFullYear()} Calicut Paradise. All rights reserved.

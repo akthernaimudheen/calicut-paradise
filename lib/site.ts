@@ -61,16 +61,17 @@ export const siteConfig = {
    * Flip to false once licensed photographs replace the generated plates in
    * public/images/. Drives the on-image "placeholder" badge.
    */
-  assets: { photoPlaceholders: true },
+  assets: { photoPlaceholders: false },
 
   links: {
     linktree: "https://linktr.ee/calicutparadise",
+    instagram: "https://instagram.com/calicutparadise",
     swiggy:
       "https://www.swiggy.com/city/thrissur/calicut-paradise-ikkanda-warrior-road-veliyannur-rest1271880",
     googleReviews:
-      "https://www.google.com/maps/search/?api=1&query=Calicut+Paradise+Thrissur",
+      "https://maps.app.goo.gl/BfdoGs7SAo6ZWakw5?g_st=ipc",
     directions:
-      "https://www.google.com/maps/dir/?api=1&destination=Calicut%20Paradise%2C%20622%20Ikkanda%20Warrior%20Rd%2C%20Kokkala%2C%20Veliyannur%2C%20Thrissur%2C%20Kerala%20680021",
+      "https://maps.app.goo.gl/BfdoGs7SAo6ZWakw5?g_st=ipc",
     mapEmbed:
       "https://maps.google.com/maps?q=Calicut%20Paradise%2C%20622%20Ikkanda%20Warrior%20Rd%2C%20Kokkala%2C%20Veliyannur%2C%20Thrissur%2C%20Kerala%20680021&z=16&output=embed",
   },

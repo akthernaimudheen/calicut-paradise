@@ -1,89 +1,113 @@
 import Link from "next/link";
-import { ArrowRight, Car, Clock, Flame, MessageCircle, Star } from "lucide-react";
-import { ImagePlate } from "@/components/ui/image-plate";
+import Image from "next/image";
+import { ArrowRight, CalendarDays, ChevronDown, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+
+const facts = [
+  {
+    figure: "4.2 ★",
+    label: "Google rating",
+    detail: "Over 3,100+ verified diner reviews in Thrissur.",
+  },
+  {
+    figure: "11:30 AM",
+    label: "to 11:15 PM",
+    detail: "Open daily for unhurried lunch, dinner and late evening meals.",
+  },
+  {
+    figure: "Confident House",
+    label: "on-site parking",
+    detail: "Ikkanda Warrior Road — minutes from Thrissur Railway Station.",
+  },
+];
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <ImagePlate
+    <>
+      <section className="relative flex min-h-[90svh] items-center justify-center overflow-hidden px-5 pb-20 pt-32 text-parchment sm:px-6 lg:min-h-[94svh] lg:px-10 lg:pt-36">
+        <Image
           src="/images/hero/hero-biryani-dum.jpg"
-          alt="Slow-cooked Malabar mutton dum biryani served in a copper handi"
-          className="size-full"
-          imageClassName="object-cover object-center"
-          sizes="100vw"
+          alt="Traditional Malabar Mutton Dum Biryani in a copper handi with steam rising"
+          fill
           priority
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full object-cover [object-position:50%_45%]"
           quality={82}
-          placeholder={false}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(100deg,#161210_6%,rgba(22,18,16,0.92)_38%,rgba(22,18,16,0.55)_70%,rgba(22,18,16,0.35)_100%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/80" />
-      </div>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,13,11,0.76)_0%,rgba(16,13,11,0.66)_45%,rgba(12,9,8,0.85)_100%)]" />
 
-      <div className="shell flex min-h-[88svh] flex-col justify-end pb-10 pt-28 sm:min-h-[92svh] sm:pb-14 sm:pt-32 lg:justify-center lg:pb-24">
-        <div className="max-w-3xl">
-          <div className="inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-full border border-parchment/15 bg-charcoal/40 px-3.5 py-2 text-[11px] text-parchment/75 backdrop-blur-md sm:text-xs">
-            <span className="inline-flex items-center gap-1.5 font-semibold text-saffron">
-              <Star className="size-3.5 fill-saffron" aria-hidden />
-              {siteConfig.rating.value}
-              <span className="font-normal text-parchment/60">on {siteConfig.rating.source}</span>
-            </span>
-            <span className="h-3 w-px bg-parchment/20" aria-hidden />
-            <span className="text-parchment/60">{siteConfig.rating.count} reviews</span>
-            <span className="hidden h-3 w-px bg-parchment/20 sm:block" aria-hidden />
-            <span className="hidden text-parchment/60 sm:inline">Ikkanda Warrior Road, Thrissur</span>
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-parchment/20 bg-charcoal/50 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-saffron-soft backdrop-blur-md sm:text-xs">
+            <span>Malabar Culinary Heritage</span>
+            <span className="size-1 rounded-full bg-saffron" />
+            <span className="text-parchment/70">Kokkala, Thrissur</span>
           </div>
 
-          <h1 className="display-xl mt-6">
-            Experience the soul of{" "}
-            <span className="italic text-saffron">Malabar</span>.
+          <h1 className="mt-6 font-heading text-hero text-parchment text-balance">
+            Slow-cooked dum, charcoal embers, and the unhurried soul of Malabar.
           </h1>
 
-          <p className="lede mt-5 max-w-xl text-[15px] sm:text-base">
-            From aromatic dum biryanis to charcoal-grilled favourites, discover a taste of Malabar
-            in the heart of Thrissur — a few minutes from the railway station, with parking at the
-            door.
+          <p className="mt-6 max-w-[54ch] text-lead text-parchment/90">
+            Calicut Paradise brings Kozhikode’s legendary kitchen traditions to Ikkanda Warrior
+            Road — fragrant kaima rice dum biryanis, fresh coastal seafood, and warm hospitality
+            made for family dining.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link href="/menu" className="btn btn-primary w-full sm:w-auto">
+          <div className="mt-9 flex w-full flex-col items-center justify-center gap-3.5 sm:w-auto sm:flex-row">
+            <Link
+              href="/menu"
+              className="btn btn-primary h-12 w-full rounded-full px-8 text-[0.95rem] font-semibold shadow-[0_16px_34px_-14px_rgba(212,163,75,0.7)] transition-all hover:scale-[1.02] sm:w-auto"
+            >
               Explore the menu
               <ArrowRight className="size-4" aria-hidden />
             </Link>
-            <Link href="/reserve" className="btn btn-ghost w-full sm:w-auto">
+            <Link
+              href="/reserve"
+              className="btn btn-ghost group h-12 w-full rounded-full border-parchment/40 bg-charcoal/40 px-8 text-[0.95rem] font-semibold text-parchment backdrop-blur-md transition-all hover:border-parchment hover:bg-parchment hover:text-charcoal sm:w-auto"
+            >
               Reserve a table
+              <CalendarDays className="size-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
             <a
-              href="#visit"
-              className="inline-flex items-center justify-center gap-2 px-1 py-2 text-[13px] font-medium text-parchment/70 underline decoration-parchment/25 underline-offset-4 transition-colors hover:text-saffron hover:decoration-saffron/50 sm:ml-2"
+              href={`https://wa.me/${siteConfig.phone.whatsapp}?text=${encodeURIComponent(
+                "Hello Calicut Paradise! I'm browsing your website and would like help placing an order.",
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-2 py-2 text-[13px] font-medium text-parchment/75 underline decoration-parchment/25 underline-offset-4 transition-colors hover:text-saffron hover:decoration-saffron/50 sm:ml-2"
             >
-              <MessageCircle className="size-4" aria-hidden />
-              Or just drop in tonight
+              <MessageCircle className="size-4 text-emerald-400" aria-hidden />
+              Order on WhatsApp
             </a>
           </div>
-
-          <dl className="mt-10 grid max-w-xl grid-cols-1 gap-px overflow-hidden rounded-xl border border-parchment/10 bg-parchment/10 sm:grid-cols-3">
-            {[
-              { icon: Clock, label: "Open daily", value: siteConfig.hours.display },
-              { icon: Car, label: "Parking", value: "On-site, Confident House" },
-              { icon: Flame, label: "Known for", value: "Dum biryani & grills" },
-            ].map((fact) => (
-              <div key={fact.label} className="bg-charcoal/85 px-4 py-3.5 backdrop-blur-sm">
-                <dt className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-parchment/60">
-                  <fact.icon className="size-3.5 text-saffron/80" aria-hidden />
-                  {fact.label}
-                </dt>
-                <dd className="mt-1 text-[13px] font-medium text-parchment/85">{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
-      </div>
 
-      <p className="absolute bottom-4 right-5 hidden text-[10px] uppercase tracking-[0.22em] text-parchment/50 lg:block">
-        Concept imagery · placeholder
-      </p>
-    </section>
+        <a
+          href="#signatures"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 text-parchment/60 transition-colors hover:text-saffron motion-safe:animate-bounce"
+          aria-label="Scroll to signatures"
+        >
+          <ChevronDown className="size-6" />
+        </a>
+      </section>
+
+      <section className="relative z-20 -mt-8 px-4 sm:-mt-12 sm:px-6 lg:px-8">
+        <dl className="mx-auto grid max-w-5xl gap-px overflow-hidden rounded-2xl border border-parchment/15 bg-parchment/15 shadow-2xl backdrop-blur-xl sm:grid-cols-3">
+          {facts.map(({ figure, label, detail }) => (
+            <div key={label} className="bg-charcoal/90 px-6 py-5.5 sm:px-7">
+              <dt className="flex items-baseline gap-2">
+                <span className="font-heading text-[1.95rem] leading-none text-parchment">
+                  {figure}
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-saffron">
+                  {label}
+                </span>
+              </dt>
+              <dd className="mt-2 text-xs leading-5 text-parchment/75">{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </>
   );
 }

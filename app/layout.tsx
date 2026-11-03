@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { CartProvider } from "@/components/cart/cart-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,19 +9,22 @@ import { siteConfig } from "@/lib/site";
 import { restaurantJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
+const display = localFont({
+  src: "./fonts/Fraunces-Variable.woff2",
+  weight: "300 700",
+  style: "normal",
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  variable: "--font-display",
+  fallback: ["Iowan Old Style", "Georgia", "serif"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const body = localFont({
+  src: "./fonts/DMSans-Variable.woff2",
+  weight: "300 700",
+  style: "normal",
   display: "swap",
-  variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  fallback: ["Segoe UI", "system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -81,7 +84,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${playfair.variable} ${jakarta.variable}`}>
+    <html lang="en-IN" className={`${display.variable} ${body.variable} h-full antialiased`}>
       <body className="min-h-dvh bg-charcoal">
         <a
           href="#main"
