@@ -85,7 +85,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
               <button
                 type="button"
                 onClick={() => setQuery("")}
-                className="absolute right-2.5 top-1/2 grid size-7 -translate-y-1/2 place-items-center rounded-full text-parchment/60 transition-colors hover:text-saffron"
+                className="absolute right-2.5 top-1/2 grid size-7 -translate-y-1/2 place-items-center rounded-full text-parchment/60 transition-colors hover:text-gold"
                 aria-label="Clear search"
               >
                 <X className="size-3.5" aria-hidden />
@@ -103,7 +103,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
               aria-pressed={category === "all" && !normalisedQuery}
               className={`shrink-0 rounded-full border px-3.5 py-2 text-[12px] font-medium transition-colors ${
                 category === "all" && !normalisedQuery
-                  ? "border-saffron bg-saffron text-charcoal"
+                  ? "border-gold bg-gold text-charcoal"
                   : "border-parchment/15 text-parchment/60 hover:border-parchment/35 hover:text-parchment"
               }`}
             >
@@ -122,7 +122,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
                   aria-pressed={active}
                   className={`shrink-0 rounded-full border px-3.5 py-2 text-[12px] font-medium transition-colors ${
                     active
-                      ? "border-saffron bg-saffron text-charcoal"
+                      ? "border-gold bg-gold text-charcoal"
                       : "border-parchment/15 text-parchment/60 hover:border-parchment/35 hover:text-parchment"
                   }`}
                 >
@@ -137,7 +137,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
       <div className="grid gap-10 pt-8 lg:grid-cols-[1fr_20rem] lg:gap-12">
         <div>
           <p className="flex items-start gap-2 rounded-lg border border-parchment/10 bg-clove/40 px-3.5 py-3 text-[11.5px] leading-relaxed text-parchment/60">
-            <Info className="mt-0.5 size-3.5 shrink-0 text-saffron/70" aria-hidden />
+            <Info className="mt-0.5 size-3.5 shrink-0 text-gold/70" aria-hidden />
             {priceNote} Dishes marked &ldquo;Ask&rdquo; have no published price. Availability is
             confirmed by the restaurant.
           </p>
@@ -204,7 +204,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
                                 key={tag}
                                 className={`rounded-full px-2 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.12em] ${
                                   tag === "chef" || tag === "signature"
-                                    ? "bg-saffron/15 text-saffron"
+                                    ? "bg-gold/15 text-gold"
                                     : "bg-parchment/8 text-parchment/60"
                                 }`}
                               >

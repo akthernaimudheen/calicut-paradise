@@ -36,7 +36,7 @@ export default function ReservePage() {
 
       <div className="shell pb-24 pt-24 sm:pt-28">
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-[11px] text-parchment/60">
-          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-saffron">
+          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-gold">
             <ArrowLeft className="size-3" aria-hidden />
             Home
           </Link>
@@ -69,7 +69,7 @@ export default function ReservePage() {
                 <dd>
                   <a
                     href={`tel:${siteConfig.phone.tel}`}
-                    className="inline-flex items-center gap-1.5 text-parchment/80 transition-colors hover:text-saffron"
+                    className="inline-flex items-center gap-1.5 text-parchment/80 transition-colors hover:text-gold"
                   >
                     <Phone className="size-3.5" aria-hidden />
                     {siteConfig.phone.display}

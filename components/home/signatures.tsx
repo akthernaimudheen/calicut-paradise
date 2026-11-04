@@ -8,11 +8,7 @@ import { signatureDishes } from "@/lib/menu";
 
 export function Signatures() {
   return (
-    <section id="signatures" className="relative overflow-hidden bg-charcoal py-16 sm:py-20 lg:py-28">
-      <div
-        className="pointer-events-none absolute -left-40 top-0 size-[28rem] rounded-full bg-terracotta/10 blur-3xl"
-        aria-hidden
-      />
+    <section id="signatures" className="relative bg-charcoal py-16 sm:py-20 lg:py-28">
       <div className="shell relative">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
@@ -28,7 +24,7 @@ export function Signatures() {
           <Reveal delay={0.1}>
             <Link
               href="/menu"
-              className="inline-flex items-center gap-2 text-[13px] font-medium text-saffron transition-colors hover:text-saffron-soft"
+              className="inline-flex items-center gap-2 text-[13px] font-medium text-gold transition-colors hover:text-gold-soft"
             >
               Full menu
               <ArrowRight className="size-4" aria-hidden />
@@ -51,7 +47,7 @@ export function Signatures() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
               <div className="flex flex-1 flex-col p-4">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-saffron/80">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gold/80">
                   {dish.kicker}
                 </p>
                 <h3 className="mt-1.5 font-display text-lg leading-snug text-parchment">

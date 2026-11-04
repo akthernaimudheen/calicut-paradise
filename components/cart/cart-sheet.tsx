@@ -107,7 +107,7 @@ export function CartSheet() {
                 ref={closeButtonRef}
                 type="button"
                 onClick={closeCart}
-                className="grid size-9 place-items-center rounded-full border border-parchment/15 text-parchment/70 transition-colors hover:border-saffron/50 hover:text-saffron"
+                className="grid size-9 place-items-center rounded-full border border-parchment/15 text-parchment/70 transition-colors hover:border-gold/50 hover:text-gold"
                 aria-label="Close"
               >
                 <X className="size-4" aria-hidden />
@@ -147,7 +147,7 @@ export function CartSheet() {
                             <button
                               type="button"
                               onClick={() => remove(item.dish.id)}
-                              className="inline-flex items-center gap-1 text-[11px] text-parchment/60 transition-colors hover:text-terracotta"
+                              className="inline-flex items-center gap-1 text-[11px] text-parchment/60 transition-colors hover:text-teal"
                               aria-label={`Remove ${item.dish.name}`}
                             >
                               <Trash2 className="size-3.5" aria-hidden />
@@ -184,7 +184,7 @@ export function CartSheet() {
                           key={type}
                           className={`flex cursor-pointer items-start gap-2.5 rounded-lg border px-3 py-2.5 transition-colors ${
                             orderType === type
-                              ? "border-saffron/60 bg-saffron/10"
+                              ? "border-gold/60 bg-gold/10"
                               : "border-parchment/12 hover:border-parchment/25"
                           }`}
                         >
@@ -278,7 +278,7 @@ export function CartSheet() {
                       type="button"
                       onClick={() => setShowPreview((value) => !value)}
                       aria-expanded={showPreview}
-                      className="inline-flex items-center gap-1.5 text-[11px] text-parchment/60 transition-colors hover:text-saffron"
+                      className="inline-flex items-center gap-1.5 text-[11px] text-parchment/60 transition-colors hover:text-gold"
                     >
                       <ChevronDown
                         className={`size-3.5 transition-transform ${showPreview ? "rotate-180" : ""}`}
@@ -299,7 +299,7 @@ export function CartSheet() {
             {items.length > 0 ? (
               <footer className="border-t border-parchment/10 bg-charcoal px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
                 {error ? (
-                  <p role="alert" className="mb-2 text-[11.5px] text-terracotta">
+                  <p role="alert" className="mb-2 text-[11.5px] text-teal">
                     {error}
                   </p>
                 ) : null}
@@ -313,7 +313,7 @@ export function CartSheet() {
                   the order is confirmed when the restaurant replies on WhatsApp.
                 </p>
                 {sent ? (
-                  <p role="status" className="mt-2 text-[11px] text-saffron">
+                  <p role="status" className="mt-2 text-[11px] text-gold">
                     WhatsApp opened in a new tab. Nothing sent yet? Call{" "}
                     <a href={`tel:${siteConfig.phone.tel}`} className="underline underline-offset-2">
                       {siteConfig.phone.display}

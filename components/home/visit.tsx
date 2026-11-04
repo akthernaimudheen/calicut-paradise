@@ -17,7 +17,7 @@ export function Visit() {
 
           <div className="mt-7 space-y-4">
             <div className="flex gap-3">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+              <MapPin className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
               <div>
                 <p className="text-[13px] font-medium text-parchment/90">Address</p>
                 <address className="mt-0.5 text-[13px] not-italic leading-relaxed text-parchment/55">
@@ -30,7 +30,7 @@ export function Visit() {
             </div>
 
             <div className="flex gap-3">
-              <Clock className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+              <Clock className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
               <div>
                 <p className="text-[13px] font-medium text-parchment/90">Hours</p>
                 <p className="mt-0.5 text-[13px] text-parchment/55">
@@ -41,7 +41,7 @@ export function Visit() {
             </div>
 
             <div className="flex gap-3">
-              <Car className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+              <Car className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
               <div>
                 <p className="text-[13px] font-medium text-parchment/90">Parking</p>
                 <p className="mt-0.5 text-[13px] text-parchment/55">
@@ -52,7 +52,7 @@ export function Visit() {
             </div>
 
             <div className="flex gap-3">
-              <Train className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+              <Train className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden />
               <div>
                 <p className="text-[13px] font-medium text-parchment/90">Getting here</p>
                 <p className="mt-0.5 text-[13px] text-parchment/55">
@@ -95,7 +95,7 @@ export function Visit() {
               href={siteConfig.links.googleReviews}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-parchment/25 underline-offset-2 hover:text-saffron"
+              className="underline decoration-parchment/25 underline-offset-2 hover:text-gold"
             >
               Open in Maps
             </a>

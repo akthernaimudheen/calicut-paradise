@@ -12,10 +12,10 @@ export function CartSummary() {
     <div className="rounded-xl border border-parchment/12 bg-clove/50 p-4">
       <div className="flex items-center justify-between gap-2">
         <h2 className="flex items-center gap-2 font-display text-lg text-parchment">
-          <ShoppingBag className="size-4 text-saffron" aria-hidden />
+          <ShoppingBag className="size-4 text-gold" aria-hidden />
           Your enquiry
         </h2>
-        <span className="rounded-full bg-saffron/15 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-saffron">
+        <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[11px] font-semibold tabular-nums text-gold">
           {count}
         </span>
       </div>
@@ -78,7 +78,7 @@ export function CartBar() {
   if (count === 0) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-14 z-40 border-t border-saffron/25 bg-charcoal/95 px-4 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
+    <div className="fixed inset-x-0 bottom-14 z-40 border-t border-gold/25 bg-charcoal/95 px-4 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
       <button
         type="button"
         onClick={openCart}

@@ -41,7 +41,7 @@ export function Ambience() {
                   key={item.label}
                   className="flex items-center gap-3 rounded-lg border border-parchment/8 bg-charcoal/40 px-3.5 py-2.5"
                 >
-                  <item.icon className="size-4 shrink-0 text-saffron/80" aria-hidden />
+                  <item.icon className="size-4 shrink-0 text-gold/80" aria-hidden />
                   <div className="min-w-0">
                     <p className="text-[12.5px] font-medium text-parchment/85">{item.label}</p>
                     <p className="text-[11px] text-parchment/60">{item.detail}</p>

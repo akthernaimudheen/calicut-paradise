@@ -39,6 +39,9 @@ npm run lint       # eslint (flat config, eslint-config-next)
 npm run test       # node --test tests/ — WhatsApp message builders
 npm run build      # production build
 npm start          # serve the production build
+
+# optional browser QA — Playwright is intentionally not a dependency
+npm i -D playwright && node scripts/qa.mjs
 ```
 
 Environment (optional, for canonical URLs):

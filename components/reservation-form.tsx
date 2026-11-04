@@ -186,7 +186,7 @@ export function ReservationForm({ compact = false }: { compact?: boolean }) {
               key={value}
               className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-lg border px-3 text-[13px] transition-colors ${
                 form.seating === value
-                  ? "border-saffron/60 bg-saffron/12 text-parchment"
+                  ? "border-gold/60 bg-gold/12 text-parchment"
                   : "border-parchment/15 text-parchment/60 hover:border-parchment/30"
               }`}
             >
@@ -220,7 +220,7 @@ export function ReservationForm({ compact = false }: { compact?: boolean }) {
       </div>
 
       {error ? (
-        <p role="alert" className="rounded-lg border border-terracotta/40 bg-terracotta/10 px-3 py-2 text-[12.5px] text-parchment">
+        <p role="alert" className="rounded-lg border border-teal/40 bg-teal/10 px-3 py-2 text-[12.5px] text-parchment">
           {error}
         </p>
       ) : null}
@@ -237,11 +237,11 @@ export function ReservationForm({ compact = false }: { compact?: boolean }) {
       </p>
 
       {sent ? (
-        <p role="status" className="text-[12px] text-saffron">
+        <p role="status" className="text-[12px] text-gold">
           WhatsApp should have opened in a new tab. If it did not,{" "}
           <a
             href={`tel:${siteConfig.phone.tel}`}
-            className="underline decoration-saffron/40 underline-offset-2"
+            className="underline decoration-gold/40 underline-offset-2"
           >
             call {siteConfig.phone.display}
           </a>

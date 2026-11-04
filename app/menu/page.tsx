@@ -43,7 +43,7 @@ export default async function MenuPage({
 
       <div className="shell pb-28 pt-24 sm:pt-28">
         <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-[11px] text-parchment/60">
-          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-saffron">
+          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-gold">
             <ArrowLeft className="size-3" aria-hidden />
             Home
           </Link>

@@ -6,11 +6,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 export function Reservation() {
   return (
-    <section id="reserve" className="relative overflow-hidden bg-charcoal py-16 sm:py-20 lg:py-28">
-      <div
-        className="pointer-events-none absolute right-0 top-0 size-[24rem] rounded-full bg-terracotta/10 blur-3xl"
-        aria-hidden
-      />
+    <section id="reserve" className="relative bg-charcoal py-16 sm:py-20 lg:py-28">
       <div className="shell relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
         <Reveal>
           <span className="eyebrow">Reservations</span>
@@ -40,7 +36,7 @@ export function Reservation() {
               <dd>
                 <a
                   href={`tel:${siteConfig.phone.tel}`}
-                  className="inline-flex items-center gap-1.5 text-parchment/80 transition-colors hover:text-saffron"
+                  className="inline-flex items-center gap-1.5 text-parchment/80 transition-colors hover:text-gold"
                 >
                   <Phone className="size-3.5" aria-hidden />
                   {siteConfig.phone.display}
@@ -56,7 +52,7 @@ export function Reservation() {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex text-[12px] text-parchment/60 underline decoration-parchment/20 underline-offset-4 transition-colors hover:text-saffron"
+            className="mt-6 inline-flex text-[12px] text-parchment/60 underline decoration-parchment/20 underline-offset-4 transition-colors hover:text-gold"
           >
             Prefer to just message? Open WhatsApp
           </a>

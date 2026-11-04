@@ -1,15 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-charcoal: #161210;
-  --color-clove: #231b17;
-  --color-clove-soft: #2b221d;
-  --color-parchment: #fbf6ee;
-  --color-parchment-deep: #f0e7d9;
-  --color-parchment-line: #e2d6c4;
-  --color-saffron: #d99b26;
-  --color-saffron-soft: #e8be6a;
-  --color-terracotta: #b84a27;
+  /*
+   * Palette aligned to the restaurant's own online presence. The teal is taken from the
+   * live Linktree theme (background #3C8080, buttons #357373, accent #4DA8A8, text
+   * #FFFFFF); the deep pine and champagne gold come from the crest logo the owner supplies.
+   *
+   * Teal is an ACCENT, not a text colour: #357373 on pine is ~2.5:1 and fails. Use it for
+   * interactive states, small marks and hairlines; use teal surfaces only behind white or
+   * ivory text (5.4:1). Gold and ivory carry the reading contrast.
+   */
+  --color-charcoal: #0b1714; /* pine-black page base */
+  --color-clove: #0d342c; /* Malabar pine raised surface */
+  --color-clove-soft: #12403a;
+  --color-parchment: #faf8f5;
+  --color-parchment-deep: #f1ece2;
+  --color-parchment-line: #e4ded2;
+  --color-gold: #c5a059; /* champagne gold */
+  --color-gold-soft: #d9bd88;
+  --color-teal: #357373; /* brand teal */
+  --color-teal-soft: #4da8a8;
 
   --font-display: var(--font-playfair), "Iowan Old Style", Georgia, serif;
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -56,12 +66,12 @@
   }
 
   ::selection {
-    background: var(--color-saffron);
+    background: var(--color-gold);
     color: var(--color-charcoal);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-saffron);
+    outline: 2px solid var(--color-gold);
     outline-offset: 3px;
     border-radius: 3px;
   }
@@ -89,22 +99,16 @@
   }
 
   .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
+    display: inline-block;
     font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: var(--color-saffron);
+    color: var(--color-gold);
   }
 
-  .eyebrow::before {
-    content: "";
-    width: 1.5rem;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.6;
+  .eyebrow-on-light {
+    color: color-mix(in oklab, var(--color-teal) 88%, black);
   }
 
   .display-xl {
@@ -160,13 +164,13 @@
   }
 
   .btn-primary {
-    background: var(--color-saffron);
-    color: #17120c;
-    box-shadow: 0 10px 30px -14px rgba(217, 155, 38, 0.9);
+    background: var(--color-gold);
+    color: #101a16;
+    box-shadow: 0 10px 30px -14px rgba(197, 160, 89, 0.75);
   }
 
   .btn-primary:hover {
-    background: var(--color-saffron-soft);
+    background: var(--color-gold-soft);
   }
 
   .btn-ghost {
@@ -199,8 +203,8 @@
   }
 
   .card-dark {
-    background: linear-gradient(160deg, #241c17 0%, #1a1411 100%);
-    border: 1px solid color-mix(in oklab, var(--color-saffron) 14%, transparent);
+    background: linear-gradient(160deg, #10312a 0%, #0a1c18 100%);
+    border: 1px solid color-mix(in oklab, var(--color-gold) 14%, transparent);
   }
 
   .hairline {
@@ -208,7 +212,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      color-mix(in oklab, var(--color-saffron) 45%, transparent),
+      color-mix(in oklab, var(--color-gold) 45%, transparent),
       transparent
     );
   }
@@ -220,16 +224,6 @@
 
   .no-scrollbar::-webkit-scrollbar {
     display: none;
-  }
-
-  .grain::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.28;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
 
   .field {
@@ -248,7 +242,7 @@
   }
 
   .field:focus {
-    border-color: color-mix(in oklab, var(--color-saffron) 60%, transparent);
+    border-color: color-mix(in oklab, var(--color-gold) 60%, transparent);
     background: color-mix(in oklab, var(--color-parchment) 8%, transparent);
     outline: none;
   }

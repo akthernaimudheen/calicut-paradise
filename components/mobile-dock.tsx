@@ -62,7 +62,7 @@ export function MobileDock() {
                   href={link.href}
                   target={link.href.startsWith("tel:") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className="flex min-h-14 flex-col items-center justify-center gap-1 py-2 text-parchment/65 transition-colors hover:text-saffron active:bg-parchment/5"
+                  className="flex min-h-14 flex-col items-center justify-center gap-1 py-2 text-parchment/65 transition-colors hover:text-gold active:bg-parchment/5"
                 >
                   {content}
                 </a>
@@ -70,7 +70,7 @@ export function MobileDock() {
                 <Link
                   href={link.href}
                   className={`flex min-h-14 flex-col items-center justify-center gap-1 py-2 transition-colors active:bg-parchment/5 ${
-                    active ? "text-saffron" : "text-parchment/65 hover:text-saffron"
+                    active ? "text-gold" : "text-parchment/65 hover:text-gold"
                   }`}
                 >
                   {content}

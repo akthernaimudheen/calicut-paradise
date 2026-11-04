@@ -13,7 +13,7 @@ export function Reviews() {
               eyebrow="Word of mouth"
               tone="light"
               title="What guests keep mentioning."
-              copy="Themes paraphrased from public listings and diner discussions — no individual review text is reproduced here."
+              copy="Three things come up again and again in what diners write — the biryani, the grills, and how easy an evening here is. The rest, including the complaints, is on Google."
             />
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <a
@@ -47,7 +47,7 @@ export function Reviews() {
                       <Star
                         key={index}
                         className={`size-3.5 ${
-                          index < 4 ? "fill-saffron text-saffron" : "fill-charcoal/15 text-charcoal/15"
+                          index < 4 ? "fill-gold text-gold" : "fill-charcoal/15 text-charcoal/15"
                         }`}
                       />
                     ))}
@@ -58,7 +58,7 @@ export function Reviews() {
                 </div>
               </div>
               <p className="text-[10px] uppercase tracking-[0.16em] text-charcoal/70">
-                Public listing · Google
+                Google · November 2026
               </p>
             </Reveal>
 
@@ -69,7 +69,7 @@ export function Reviews() {
                 className="rounded-xl border border-charcoal/12 bg-white/45 p-5"
               >
                 <div className="flex items-start gap-3">
-                  <MessageSquareQuote className="mt-0.5 size-4 shrink-0 text-terracotta" aria-hidden />
+                  <MessageSquareQuote className="mt-0.5 size-4 shrink-0 text-teal" aria-hidden />
                   <div>
                     <h3 className="font-display text-base text-charcoal">{review.theme}</h3>
                     <p className="mt-1.5 text-[13px] leading-relaxed text-charcoal/65">

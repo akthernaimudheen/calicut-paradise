@@ -42,12 +42,37 @@ It is a preview, not a deployment: it dies with the process.
 
 ## 2. Vercel (simplest permanent host)
 
+The repo is set up for a zero-config Vercel import: Next.js 16 is auto-detected, there are
+no server-side secrets, no database and no build-time API calls. Build command `next build`,
+output `.next`, Node 22 (Vercel default; the app needs ≥ 20.9).
+
+One-click import of this repository:
+
+```
+https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fakthernaimudheen%2Fcalicut-paradise&env=NEXT_PUBLIC_SITE_URL&project-name=calicut-paradise
+```
+
+Or manually:
+
 1. Push the project to a Git repository you control.
-2. Import it at vercel.com → Framework preset **Next.js** (auto-detected).
-3. Environment variable: `NEXT_PUBLIC_SITE_URL = https://<project>.vercel.app`.
-4. Deploy. Every later push redeploys.
+2. Import it at vercel.com → Framework preset **Next.js** (auto-detected, don't override).
+3. Environment variable: `NEXT_PUBLIC_SITE_URL = https://<project>.vercel.app`
+   (set it for **Production, Preview and Development** — it is compiled into canonical tags,
+   `sitemap.xml` and `robots.txt`, so a wrong value is only visible in page source).
+4. Deploy. Every later push to `main` redeploys.
 5. Custom domain: Project → Settings → Domains → add `calicutparadise.in` (or whatever the
-   owner registers) and point the DNS records Vercel shows.
+   owner registers), point the DNS records Vercel shows, then **change
+   `NEXT_PUBLIC_SITE_URL` to that domain and redeploy**.
+
+Notes specific to this repo:
+
+- `playwright` is deliberately **not** a dependency, so `npm install` on Vercel stays lean
+  and does not download ~150 MB of browsers. Install it locally only to run the QA harness
+  (`npm i -D playwright && node scripts/qa.mjs`).
+- `sharp` is present for local `next start`; on Vercel the platform optimiser is used.
+- Images are optimised on demand — the placeholder JPGs in `public/images/` are committed,
+  real photography will be too. Keep each file under ~500 KB / 2000 px wide.
+- No `vercel.json` is needed. `allowedDevOrigins` in `next.config.ts` only affects `next dev`.
 
 ## 3. Any Node host (Railway, Render, Fly, a VPS)
 

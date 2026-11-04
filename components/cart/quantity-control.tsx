@@ -18,8 +18,8 @@ export function QuantityControl({ dishId, tone = "solid", className = "" }: Prop
   if (quantity === 0) {
     const base =
       tone === "solid"
-        ? "border-saffron/50 bg-saffron/12 text-saffron hover:bg-saffron hover:text-charcoal"
-        : "border-parchment/20 text-parchment/75 hover:border-saffron/60 hover:text-saffron";
+        ? "border-gold/50 bg-gold/12 text-gold hover:bg-gold hover:text-charcoal"
+        : "border-parchment/20 text-parchment/75 hover:border-gold/60 hover:text-gold";
     return (
       <button
         type="button"
@@ -35,7 +35,7 @@ export function QuantityControl({ dishId, tone = "solid", className = "" }: Prop
 
   const shell =
     tone === "solid"
-      ? "border-saffron/50 bg-saffron/12 text-saffron"
+      ? "border-gold/50 bg-gold/12 text-gold"
       : "border-parchment/20 text-parchment/80";
 
   return (
@@ -45,7 +45,7 @@ export function QuantityControl({ dishId, tone = "solid", className = "" }: Prop
       <button
         type="button"
         onClick={() => decrement(dishId)}
-        className="grid size-9 place-items-center rounded-full transition-colors hover:bg-saffron/15"
+        className="grid size-9 place-items-center rounded-full transition-colors hover:bg-gold/15"
         aria-label="Remove one"
       >
         <Minus className="size-3.5" aria-hidden />
@@ -56,7 +56,7 @@ export function QuantityControl({ dishId, tone = "solid", className = "" }: Prop
       <button
         type="button"
         onClick={() => add(dishId)}
-        className="grid size-9 place-items-center rounded-full transition-colors hover:bg-saffron/15"
+        className="grid size-9 place-items-center rounded-full transition-colors hover:bg-gold/15"
         aria-label="Add one more"
       >
         <Plus className="size-3.5" aria-hidden />

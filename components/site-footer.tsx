@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <span className="grid size-10 place-items-center rounded-full border border-saffron/45 text-sm font-semibold tracking-[0.08em] text-saffron">
+              <span className="grid size-10 place-items-center rounded-full border border-gold/45 text-sm font-semibold tracking-[0.08em] text-gold">
                 {siteConfig.monogram}
               </span>
               <span>
@@ -28,7 +28,7 @@ export function SiteFooter() {
                 href={siteConfig.links.swiggy}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-parchment/15 px-3.5 py-2 text-xs text-parchment/65 transition-colors hover:border-saffron/50 hover:text-saffron"
+                className="inline-flex items-center gap-1.5 rounded-full border border-parchment/15 px-3.5 py-2 text-xs text-parchment/65 transition-colors hover:border-gold/50 hover:text-gold"
               >
                 Order on Swiggy
                 <ArrowUpRight className="size-3" aria-hidden />
@@ -37,7 +37,7 @@ export function SiteFooter() {
                 href={siteConfig.links.linktree}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-parchment/15 px-3.5 py-2 text-xs text-parchment/65 transition-colors hover:border-saffron/50 hover:text-saffron"
+                className="inline-flex items-center gap-1.5 rounded-full border border-parchment/15 px-3.5 py-2 text-xs text-parchment/65 transition-colors hover:border-gold/50 hover:text-gold"
               >
                 Linktree
                 <ArrowUpRight className="size-3" aria-hidden />
@@ -46,7 +46,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-saffron">
+            <h2 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">
               Visit
             </h2>
             <address className="mt-4 space-y-1 text-sm not-italic leading-relaxed text-parchment/55">
@@ -69,7 +69,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-saffron">
+            <h2 className="text-[10px] font-semibold uppercase tracking-[0.28em] text-gold">
               Explore
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -77,7 +77,7 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-flex min-h-6 items-center text-parchment/55 transition-colors hover:text-saffron"
+                    className="inline-flex min-h-6 items-center text-parchment/55 transition-colors hover:text-gold"
                   >
                     {link.label}
                   </Link>
@@ -86,7 +86,7 @@ export function SiteFooter() {
               <li>
                 <Link
                   href="/reserve"
-                  className="inline-flex min-h-6 items-center text-parchment/55 transition-colors hover:text-saffron"
+                  className="inline-flex min-h-6 items-center text-parchment/55 transition-colors hover:text-gold"
                 >
                   Reserve a table
                 </Link>
@@ -94,7 +94,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`tel:${siteConfig.phone.tel}`}
-                  className="inline-flex min-h-6 items-center gap-2 text-parchment/55 transition-colors hover:text-saffron"
+                  className="inline-flex min-h-6 items-center gap-2 text-parchment/55 transition-colors hover:text-gold"
                 >
                   <Phone className="size-3.5" aria-hidden />
                   {siteConfig.phone.display}
