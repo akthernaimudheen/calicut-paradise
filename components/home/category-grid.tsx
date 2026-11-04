@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { menu } from "@/lib/menu";
@@ -22,20 +21,15 @@ export function CategoryGrid() {
                 href={`/menu?c=${category.id}`}
                 className="group flex h-full min-h-32 flex-col justify-between rounded-xl border border-charcoal/12 bg-parchment/70 p-4 transition-colors hover:border-terracotta/40 hover:bg-white"
               >
-                <div className="flex items-start justify-between gap-2">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-charcoal/70">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <ArrowUpRight
-                    className="size-4 text-charcoal/25 transition-colors group-hover:text-terracotta"
-                    aria-hidden
-                  />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg leading-tight text-charcoal">{category.name}</h3>
-                  <p className="mt-1 text-[11px] text-charcoal/60">
+                <div className="flex flex-col justify-between h-full">
+                  <span className="text-[11px] font-medium text-teal">
                     {category.dishes.length} dishes
-                  </p>
+                  </span>
+                  <div className="mt-6">
+                    <h3 className="font-display text-lg leading-tight text-charcoal transition-colors group-hover:text-teal">
+                      {category.name}
+                    </h3>
+                  </div>
                 </div>
               </Link>
             </Reveal>

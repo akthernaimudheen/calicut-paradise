@@ -121,26 +121,22 @@ export function SiteHeader() {
           >
             <div className="shell flex min-h-full flex-col gap-8 pb-28 pt-8">
               <nav aria-label="Mobile" className="flex flex-col divide-y divide-parchment/10">
-                {navLinks.map((link, index) => (
+                {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-baseline justify-between py-4 font-display text-2xl text-parchment"
+                    className="py-4 font-display text-2xl text-parchment transition-colors hover:text-saffron"
                   >
                     {link.label}
-                    <span className="text-[10px] font-sans tracking-[0.24em] text-parchment/55">
-                      0{index + 1}
-                    </span>
                   </Link>
                 ))}
                 <Link
                   href="/reserve"
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-baseline justify-between py-4 font-display text-2xl text-saffron"
+                  className="py-4 font-display text-2xl text-saffron"
                 >
                   Reserve a table
-                  <span className="text-[10px] font-sans tracking-[0.24em] text-saffron/50">05</span>
                 </Link>
               </nav>
 

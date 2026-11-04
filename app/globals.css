@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-charcoal: #14110f;
-  --color-clove: #1f1915;
-  --color-clove-soft: #2a211b;
-  --color-parchment: #fcf9f2;
-  --color-parchment-deep: #f2e9dc;
-  --color-parchment-line: #e4d8c6;
-  --color-saffron: #d4a34b;
+  --color-charcoal: #0c1815;
+  --color-clove: #0d342c;
+  --color-clove-soft: #143d34;
+  --color-parchment: #faf8f5;
+  --color-parchment-deep: #f2ede4;
+  --color-parchment-line: #e2d9cb;
+  --color-saffron: #d9a852;
   --color-saffron-soft: #e5bd6f;
-  --color-terracotta: #b84a27;
-  --color-forest: #0f2922;
+  --color-terracotta: #357373;
+  --color-teal: #357373;
+  --color-teal-light: #4da8a8;
+  --color-forest: #0d342c;
 
   --font-display: var(--font-display), "Fraunces", Georgia, serif;
   --font-sans: var(--font-body), "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -102,20 +104,11 @@
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
     font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--color-saffron);
-  }
-
-  .eyebrow::before {
-    content: "";
-    width: 1.5rem;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.6;
   }
 
   .display-xl {
