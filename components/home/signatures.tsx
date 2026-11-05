@@ -37,7 +37,7 @@ export function Signatures() {
           <Reveal className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px] border border-paper/15 bg-ink-soft">
             <Image
               src="/images/restaurant/calicut-paradise-dining-experience.jpg"
-              alt="Calicut Paradise signature dining spread featuring slow-cooked dum biryani, flaky porotta and coastal specials"
+              alt="A laid table of biryani, grills and coolers in the Calicut Paradise dining room"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

@@ -24,8 +24,9 @@ export function CalicutParadiseLogo({
         src={src}
         alt="Calicut Paradise Crest"
         width={size}
-        height={Math.round(size * 1.15)}
-        className="object-contain h-auto w-auto"
+        height={size}
+        className="object-contain"
+        style={{ width: size, height: "auto" }}
         priority
       />
     </span>

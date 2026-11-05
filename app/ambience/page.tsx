@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, CalendarDays, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Ambience & Dining Hall — Calicut Paradise Thrissur",
+  title: "Ambience & Dining Hall",
   description:
     "Inside Calicut Paradise at Confident House, Thrissur. Curved cane ceiling, brass globe lighting, air-conditioned family booths, and on-site parking.",
   alternates: { canonical: "/ambience" },

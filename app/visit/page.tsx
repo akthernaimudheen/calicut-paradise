@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Visit Us & Directions — Calicut Paradise Thrissur",
+  title: "Visit Us & Directions",
   description:
     "Find Calicut Paradise at Confident House, Ikkanda Warrior Road, Kokkala, Thrissur. Map, directions, parking, hours, and direct phone contact.",
   alternates: { canonical: "/visit" },

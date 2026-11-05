@@ -9,7 +9,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/restaurant/calicut-paradise-dining-experience.jpg"
-          alt="Calicut Paradise dining room at Confident House, Thrissur with cane ceiling and warm ambient lighting"
+          alt="Dum biryani, charcoal grills and a lime cooler on a laid table at Calicut Paradise, Thrissur"
           fill
           priority
           quality={82}
@@ -22,6 +22,14 @@ export function Hero() {
           style={{
             background:
               "linear-gradient(to right, rgba(20,16,14,0.92) 0%, rgba(20,16,14,0.72) 42%, rgba(20,16,14,0.25) 75%, rgba(20,16,14,0.4) 100%), linear-gradient(to top, rgba(20,16,14,0.95) 0%, transparent 28%)",
+          }}
+        />
+        {/* Mobile scrim — the cropped frame puts bright food behind the copy */}
+        <div
+          className="absolute inset-0 pointer-events-none sm:hidden"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(20,16,14,0.94) 0%, rgba(20,16,14,0.82) 42%, rgba(20,16,14,0.55) 68%, rgba(20,16,14,0.3) 100%)",
           }}
         />
       </div>
@@ -58,7 +66,7 @@ export function Hero() {
             <div className="flex items-center gap-2.5">
               <Star className="size-4 text-brass shrink-0 fill-brass/30" />
               <span>
-                <strong className="text-paper font-semibold">4.2 ★</strong> · 3,100+ Google diner reviews
+                <strong className="text-paper font-semibold">4.2</strong> · 3,100+ Google diner reviews
               </span>
             </div>
             <div className="flex items-center gap-2.5">

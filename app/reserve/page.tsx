@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Reserve a Table — Calicut Paradise, Thrissur",
+  title: "Reserve a Table",
   description:
     "Send a table reservation enquiry to Calicut Paradise, Thrissur — choose date, time, and party size. Confirmed directly on WhatsApp.",
   alternates: { canonical: "/reserve" },

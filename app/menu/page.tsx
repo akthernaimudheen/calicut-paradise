@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Menu & Indicative Prices — Calicut Paradise",
+  title: "Menu & Indicative Prices",
   description:
     "Browse the Calicut Paradise menu — biryani and ghee rice, Malabar specialities, charcoal grills, Kerala breads, rolls, desserts and Sulaimani. Build an itemised WhatsApp enquiry for dine-in, takeaway or delivery.",
   alternates: { canonical: "/menu" },
