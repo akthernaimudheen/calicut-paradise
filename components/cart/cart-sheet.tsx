@@ -13,8 +13,6 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import {
-  ORDER_TYPE_LABEL,
-  ORDER_TYPE_NOTE,
   buildOrderMessage,
   formatRupees,
   whatsappUrl,
@@ -28,9 +26,7 @@ const ORDER_TYPES: OrderType[] = ["dine-in", "takeaway", "delivery"];
 export function CartSheet() {
   const { items, count, total, hasUnpricedItems, isOpen, closeCart, remove, clear, lines } =
     useCart();
-  const [orderType, setOrderType] = useState<OrderType>("dine-in");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [orderType, setOrderType] = useState<OrderType>("takeaway");
   const [notes, setNotes] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [showPreview, setShowPreview] = useState(false);
@@ -52,15 +48,11 @@ export function CartSheet() {
     };
   }, [isOpen, closeCart]);
 
-  const message = buildOrderMessage({ orderType, name, phone, notes, items: lines });
+  const message = buildOrderMessage({ orderType, notes, items: lines });
 
   function handleSend() {
     if (items.length === 0) {
       setError("Add at least one dish first.");
-      return;
-    }
-    if (!name.trim()) {
-      setError("Add your name so the counter can reply to the right person.");
       return;
     }
     setError(null);
@@ -176,86 +168,42 @@ export function CartSheet() {
 
                   <div className="h-px w-full bg-parchment/10" aria-hidden />
 
-                  <fieldset>
-                    <legend className="field-label">How would you like it?</legend>
-                    <div className="space-y-2">
-                      {ORDER_TYPES.map((type) => (
-                        <label
-                          key={type}
-                          className={`flex cursor-pointer items-start gap-2.5 rounded-lg border px-3 py-2.5 transition-colors ${
-                            orderType === type
-                              ? "border-saffron/60 bg-saffron/10"
-                              : "border-parchment/12 hover:border-parchment/25"
-                          }`}
-                        >
-                          <input
-                            type="radio"
-                            name="order-type"
-                            value={type}
-                            checked={orderType === type}
-                            onChange={() => setOrderType(type)}
-                            className="mt-0.5 size-3.5 accent-[#D99B26]"
-                          />
-                          <span>
-                            <span className="block text-[12.5px] font-medium text-parchment/90">
-                              {ORDER_TYPE_LABEL[type]}
-                            </span>
-                            <span className="mt-0.5 block text-[11px] leading-snug text-parchment/60">
-                              {ORDER_TYPE_NOTE[type]}
-                            </span>
-                          </span>
-                        </label>
-                      ))}
-                    </div>
-                  </fieldset>
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <div>
-                      <label htmlFor="cart-name" className="field-label">
-                        Name
-                      </label>
-                      <input
-                        id="cart-name"
-                        type="text"
-                        autoComplete="name"
-                        value={name}
-                        onChange={(event) => {
-                          setName(event.target.value);
-                          setError(null);
-                        }}
-                        placeholder="Your name"
-                        className="field"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="cart-phone" className="field-label">
-                        Phone <span className="normal-case tracking-normal text-parchment/55">(optional)</span>
-                      </label>
-                      <input
-                        id="cart-phone"
-                        type="tel"
-                        inputMode="tel"
-                        autoComplete="tel"
-                        value={phone}
-                        onChange={(event) => setPhone(event.target.value)}
-                        placeholder="+91"
-                        className="field"
-                      />
+                  <div>
+                    <label className="field-label mb-2 block">Order Type <span className="normal-case tracking-normal text-parchment/50">(optional)</span></label>
+                    <div className="grid grid-cols-3 gap-1.5 rounded-lg border border-parchment/15 bg-charcoal/80 p-1">
+                      {ORDER_TYPES.map((type) => {
+                        const active = orderType === type;
+                        const shortLabel =
+                          type === "takeaway" ? "Takeaway" : type === "delivery" ? "Delivery" : "Dine-in";
+                        return (
+                          <button
+                            key={type}
+                            type="button"
+                            onClick={() => setOrderType(type)}
+                            className={`rounded-md py-1.5 text-center text-xs font-medium transition-all ${
+                              active
+                                ? "bg-saffron text-charcoal shadow-sm font-semibold"
+                                : "text-parchment/70 hover:text-parchment"
+                            }`}
+                          >
+                            {shortLabel}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="cart-notes" className="field-label">
-                      Instructions <span className="normal-case tracking-normal text-parchment/55">(optional)</span>
+                    <label htmlFor="cart-notes" className="field-label mb-1.5 block">
+                      Quick Note or Name <span className="normal-case tracking-normal text-parchment/50">(optional)</span>
                     </label>
-                    <textarea
+                    <input
                       id="cart-notes"
-                      rows={2}
+                      type="text"
                       value={notes}
                       onChange={(event) => setNotes(event.target.value)}
-                      placeholder="Less spice, extra raita, pickup at 8:15 PM…"
-                      className="field resize-none"
+                      placeholder="e.g. Arjun, pickup at 8:30 PM, extra raita…"
+                      className="field"
                     />
                   </div>
 
@@ -303,9 +251,9 @@ export function CartSheet() {
                     {error}
                   </p>
                 ) : null}
-                <button type="button" onClick={handleSend} className="btn btn-primary w-full">
+                <button type="button" onClick={handleSend} className="btn btn-primary w-full shadow-lg">
                   <MessageCircle className="size-4" aria-hidden />
-                  Send order enquiry on WhatsApp
+                  Send Order on WhatsApp (1 Tap)
                 </button>
                 <p className="mt-2.5 flex items-start gap-1.5 text-[10.5px] leading-snug text-parchment/55">
                   <Info className="mt-0.5 size-3 shrink-0" aria-hidden />

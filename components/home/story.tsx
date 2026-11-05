@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { ImagePlate } from "@/components/ui/image-plate";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -48,12 +50,22 @@ export function Story() {
               </Reveal>
             ))}
           </dl>
+
+          <div className="mt-8">
+            <Link
+              href="/story"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-saffron hover:text-saffron-soft transition-colors"
+            >
+              <span>Discover our kitchen heritage &amp; the craft of dum</span>
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </Reveal>
 
         <Reveal delay={0.1} className="order-1 lg:order-2">
           <div className="relative">
             <ImagePlate
-              src="/images/hero/hero-biryani-detail.jpg"
+              src="/images/biryani/biryani-mutton-dum.jpg"
               alt="Close detail of a sealed Malabar dum biryani"
               className="aspect-3/4 w-full rounded-2xl"
               sizes="(max-width: 1024px) 100vw, 45vw"

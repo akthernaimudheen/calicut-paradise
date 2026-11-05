@@ -9,7 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes: MetadataRoute.Sitemap = [
     { url: `${base}/`, lastModified, changeFrequency: "monthly", priority: 1 },
     { url: `${base}/menu`, lastModified, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/story`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/ambience`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/reserve`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/visit`, lastModified, changeFrequency: "monthly", priority: 0.8 },
   ];
 
   // Each menu section is addressable via a query string anchor.

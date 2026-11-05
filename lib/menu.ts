@@ -168,7 +168,7 @@ export const menu: MenuCategory[] = [
     short: "Grills",
     blurb: "Charcoal, marinades and the in-house Indo-Chinese favourites.",
     image: {
-      src: "/images/grills/chicken-alfaham.jpg",
+      src: "/images/dishes/chicken-lollipop.jpg",
       alt: "Smoky charcoal-grilled Chicken Alfaham with garlic toum and kubboos",
     },
     dishes: [
@@ -371,7 +371,7 @@ export const menu: MenuCategory[] = [
     short: "Desserts",
     blurb: "Kerala sweets, kept deliberately light.",
     image: {
-      src: "/images/desserts/vattalappam.jpg",
+      src: "/images/dishes/layered-dessert.jpg",
       alt: "Traditional steamed Malabar Vattalappam with cardamom and cashews",
     },
     dishes: [
@@ -430,52 +430,52 @@ export const signatureDishes = [
   },
   {
     id: "chicken-alfaham",
-    name: "Charcoal Chicken Al Faham",
+    name: "Crisp Spiced Chicken Lollipops",
     kicker: "Off the grill",
-    description: "Marinated overnight, grilled over charcoal, served with kubboos and garlic toum.",
-    image: "/images/grills/chicken-alfaham.jpg",
-    alt: "Charcoal-grilled Chicken Alfaham",
+    description: "Crispy fried chicken drumettes tossed in a spiced Malabar glaze with fresh onion and herb salad.",
+    image: "/images/dishes/chicken-lollipop.jpg",
+    alt: "Crisp seasoned chicken lollipops with onion salad",
   },
   {
     id: "vattalappam",
-    name: "Vattalappam & Sulaimani",
+    name: "Royal Falooda & Desserts",
     kicker: "How to finish",
-    description: "Steamed coconut custard with cardamom, next to a hot glass of spiced Sulaimani.",
-    image: "/images/desserts/vattalappam.jpg",
-    alt: "Traditional Malabar Vattalappam",
+    description: "Layered falooda with vanilla ice cream, rose syrup, dry fruits, fresh pomegranate, and sweet basil seeds.",
+    image: "/images/dishes/layered-dessert.jpg",
+    alt: "Royal layered falooda dessert with fruit and nuts",
   },
 ] as const;
 
 export const galleryItems = [
   {
-    src: "/images/biryani/biryani-chicken-dum.jpg",
-    alt: "Kozhikodan chicken dum biryani with jeerakasala rice",
-    caption: "Chicken dum biryani",
+    src: "/images/restaurant/calicut-paradise-dining-experience.jpg",
+    alt: "Dining feast spread at Calicut Paradise featuring signature dishes and refreshing beverages",
+    caption: "The dining table feast",
   },
   {
-    src: "/images/malabar-specials/kallummakkaya-roast.jpg",
-    alt: "Sizzling Malabar Kallummakkaya mussels roast",
-    caption: "Kallummakkaya roast",
+    src: "/images/dishes/grilled-prawns.jpg",
+    alt: "Gourmet grilled prawns platter seasoned with coastal Kerala spices",
+    caption: "Grilled coastal prawns",
   },
   {
-    src: "/images/grills/dragon-paneer.jpg",
-    alt: "Crisp Indo-Chinese Dragon Paneer with sesame",
-    caption: "Dragon Paneer",
+    src: "/images/dishes/chicken-lollipop.jpg",
+    alt: "Crisp spicy chicken lollipops with fresh sliced onion salad",
+    caption: "Crisp chicken lollipops",
   },
   {
-    src: "/images/breads/nool-porotta.jpg",
-    alt: "Freshly made layered Nool Porotta",
-    caption: "Nool porotta",
+    src: "/images/dishes/layered-dessert.jpg",
+    alt: "Tall layered dessert parfait with fruit, dry fruits and cherry garnish",
+    caption: "Layered Falooda dessert",
   },
   {
-    src: "/images/ambience/dining-hall.jpg",
-    alt: "The dining room at Calicut Paradise Thrissur",
-    caption: "The dining room",
+    src: "/images/ambience/dining-interior.jpg",
+    alt: "Interior dining area at Calicut Paradise featuring warm pendant lighting, rattan ceiling details and restaurant seating.",
+    caption: "Interior dining room",
   },
   {
-    src: "/images/desserts/mango-falooda.jpg",
-    alt: "Royal Mango Falooda with ice cream and pistachios",
-    caption: "Mango falooda",
+    src: "/images/restaurant/calicut-paradise-exterior.jpg",
+    alt: "Calicut Paradise restaurant exterior at Confident House, Thrissur with prominent signage",
+    caption: "Confident House, Kokkala",
   },
 ];
 

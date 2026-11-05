@@ -88,10 +88,10 @@ export type SiteConfig = typeof siteConfig;
 
 export const navLinks = [
   { href: "/menu", label: "Menu" },
-  { href: "/#signatures", label: "Signatures" },
-  { href: "/#story", label: "Our story" },
-  { href: "/#gallery", label: "Gallery" },
-  { href: "/#visit", label: "Visit" },
+  { href: "/story", label: "Our story" },
+  { href: "/ambience", label: "Ambience" },
+  { href: "/reserve", label: "Reserve" },
+  { href: "/visit", label: "Visit & Contact" },
 ] as const;
 
 /** Four instant actions — the Linktree-replacement strip. */
@@ -104,14 +104,14 @@ export const quickActions = [
   },
   {
     label: "WhatsApp order",
-    hint: "Enquiry, not a confirmed order",
+    hint: "Instant 1-tap enquiry",
     href: "/menu",
     icon: "whatsapp" as const,
   },
   {
     label: "Maps & parking",
     hint: "Ikkanda Warrior Rd",
-    href: "/#visit",
+    href: "/visit",
     icon: "pin" as const,
   },
   {

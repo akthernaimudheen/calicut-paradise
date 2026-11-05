@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { Car, CupSoda, Flame, Wheat } from "lucide-react";
-import { ImagePlate } from "@/components/ui/image-plate";
 import { Reveal } from "@/components/ui/reveal";
 import { featureCards } from "@/lib/site";
 
@@ -7,15 +7,15 @@ const icons = { flame: Flame, car: Car, wheat: Wheat, cup: CupSoda } as const;
 
 export function Intro() {
   return (
-    <section id="about" className="relative bg-parchment py-16 sm:py-20 lg:py-28">
+    <section id="intro" className="relative bg-parchment py-16 sm:py-20 lg:py-28">
       <div className="shell">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <Reveal>
-            <span className="eyebrow">The restaurant</span>
+            <span className="eyebrow !text-teal">The restaurant</span>
             <h2 className="display-lg display-on-light mt-4 text-balance">
               A Malabar kitchen on Ikkanda Warrior Road.
             </h2>
-            <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-charcoal/70">
+            <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-charcoal/75">
               <p>
                 Calicut Paradise brings the cooking of north Kerala into the middle of Thrissur —
                 dum biryanis sealed and finished slowly, fish and mussels from the coast, breads
@@ -48,20 +48,16 @@ export function Intro() {
           </Reveal>
 
           <Reveal delay={0.1} className="relative">
-            <ImagePlate
-              src="/images/ambience/dining-hall.jpg"
-              alt="The dining room at Calicut Paradise, Thrissur"
-              className="aspect-4/5 w-full rounded-2xl sm:aspect-3/4 lg:aspect-4/5"
-              sizes="(max-width: 1024px) 100vw, 45vw"
-            />
-            <div className="absolute -bottom-5 left-4 right-4 rounded-xl border border-charcoal/10 bg-parchment/95 px-5 py-4 shadow-[0_20px_50px_-30px_rgba(22,18,16,0.5)] backdrop-blur sm:left-8 sm:right-auto sm:max-w-xs">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta">
-                Good to know
-              </p>
-              <p className="mt-1.5 text-[13px] leading-snug text-charcoal/75">
-                AC indoor and outdoor seating, minutes from Thrissur Railway Station and the KSRTC
-                stand.
-              </p>
+            <div className="relative aspect-4/5 w-full overflow-hidden rounded-2xl border border-charcoal/12 bg-charcoal shadow-xl sm:aspect-3/4 lg:aspect-4/5">
+              <Image
+                src="/images/ambience/dining-interior.jpg"
+                alt="Interior dining area at Calicut Paradise featuring warm pendant lighting, rattan ceiling details and restaurant seating"
+                fill
+                className="object-cover object-[center_35%]"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                priority
+                quality={82}
+              />
             </div>
           </Reveal>
         </div>
@@ -73,15 +69,15 @@ export function Intro() {
               <Reveal
                 key={feature.title}
                 delay={index * 0.06}
-                className="group rounded-xl border border-charcoal/10 bg-white/45 p-5 transition-colors hover:border-terracotta/35 hover:bg-white/70"
+                className="group rounded-xl border border-charcoal/10 bg-white/50 p-5 transition-colors hover:border-teal/40 hover:bg-white/80"
               >
-                <span className="grid size-10 place-items-center rounded-lg bg-terracotta/10 text-terracotta">
+                <span className="grid size-10 place-items-center rounded-lg bg-teal/10 text-teal">
                   <Icon className="size-[18px]" aria-hidden />
                 </span>
                 <h3 className="mt-4 font-display text-lg leading-snug text-charcoal">
                   {feature.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-charcoal/60">{feature.body}</p>
+                <p className="mt-2 text-[13px] leading-relaxed text-charcoal/65">{feature.body}</p>
               </Reveal>
             );
           })}

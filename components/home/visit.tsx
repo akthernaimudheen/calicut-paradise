@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Car, Clock, MapPin, Navigation, Phone, Train } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { HoursBadge } from "@/components/hours-badge";
@@ -63,15 +64,10 @@ export function Visit() {
           </div>
 
           <div className="mt-7 flex flex-wrap gap-2.5">
-            <a
-              href={siteConfig.links.directions}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
+            <Link href="/visit" className="btn btn-primary">
               <Navigation className="size-4" aria-hidden />
-              Get directions
-            </a>
+              Location &amp; Parking Guide
+            </Link>
             <a href={`tel:${siteConfig.phone.tel}`} className="btn btn-ghost">
               <Phone className="size-4" aria-hidden />
               {siteConfig.phone.display}
