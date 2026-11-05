@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/hero";
-import { QuickActions } from "@/components/home/quick-actions";
-import { Intro } from "@/components/home/intro";
 import { Signatures } from "@/components/home/signatures";
-import { CategoryGrid } from "@/components/home/category-grid";
-import { Story } from "@/components/home/story";
-import { Gallery } from "@/components/home/gallery";
 import { Ambience } from "@/components/home/ambience";
-import { Reviews } from "@/components/home/reviews";
 import { Visit } from "@/components/home/visit";
-import { Reservation } from "@/components/home/reservation";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
@@ -29,17 +22,11 @@ export default function HomePage() {
           __html: JSON.stringify(breadcrumbJsonLd([{ name: "Home", path: "/" }])),
         }}
       />
+      {/* Four disciplined movements — Direction B: The Green Room */}
       <Hero />
-      <QuickActions />
-      <Intro />
       <Signatures />
-      <CategoryGrid />
-      <Story />
-      <Gallery />
       <Ambience />
-      <Reviews />
       <Visit />
-      <Reservation />
     </>
   );
 }

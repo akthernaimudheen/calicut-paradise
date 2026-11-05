@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ChevronRight, Phone } from "lucide-react";
+import { ArrowLeft, ChevronRight, MapPin, Phone } from "lucide-react";
 import { ReservationForm } from "@/components/reservation-form";
-import { Visit } from "@/components/home/visit";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Reserve a table",
+  title: "Reserve a Table — Calicut Paradise, Thrissur",
   description:
-    "Send a table reservation enquiry to Calicut Paradise, Thrissur — pick a date, time, party size and AC indoor or outdoor seating. Confirmed by the restaurant on WhatsApp.",
+    "Send a table reservation enquiry to Calicut Paradise, Thrissur — choose date, time, and party size. Confirmed directly on WhatsApp.",
   alternates: { canonical: "/reserve" },
   openGraph: {
     title: "Reserve a table · Calicut Paradise, Thrissur",
@@ -34,58 +33,73 @@ export default function ReservePage() {
         }}
       />
 
-      <div className="shell pb-24 pt-24 sm:pt-28">
-        <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-[11px] text-parchment/60">
-          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-saffron">
+      <div className="shell pb-24 pt-24 sm:pt-28 bg-ink text-paper">
+        <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-xs text-paper/60">
+          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-brass">
             <ArrowLeft className="size-3" aria-hidden />
             Home
           </Link>
-          <ChevronRight className="size-3 text-parchment/20" aria-hidden />
-          <span className="text-parchment/70">Reserve</span>
+          <ChevronRight className="size-3 text-paper/20" aria-hidden />
+          <span className="text-paper/80 font-medium">Reserve</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 items-start">
           <div>
-            <span className="eyebrow">Reservations</span>
-            <h1 className="display-lg mt-4">Book the family table.</h1>
-            <p className="lede mt-4 max-w-md text-[14px]">
-              Send your details on WhatsApp and the counter will confirm seating and timing. No
-              payment, no third-party booking fee — the message goes straight to the restaurant.
+            <span className="label text-brass">DIRECT TABLE RESERVATIONS</span>
+            <h1 className="display-lg mt-2 text-paper">Book the family table.</h1>
+            <p className="lede mt-3 max-w-md text-paper/75">
+              Send your table reservation enquiry to the counter on WhatsApp. No booking fees, no prepayment — the restaurant confirms your seating and timing directly.
             </p>
 
-            <dl className="mt-7 space-y-3 text-[13px]">
-              <div className="flex items-center justify-between gap-4 border-b border-parchment/10 pb-3">
-                <dt className="text-parchment/60">Hours</dt>
-                <dd className="text-parchment/80">
+            <dl className="mt-8 space-y-3.5 text-sm">
+              <div className="flex items-center justify-between gap-4 border-b border-paper/10 pb-3">
+                <dt className="text-paper/60">Kitchen Hours</dt>
+                <dd className="font-medium text-paper">
                   {siteConfig.hours.days} · {siteConfig.hours.display}
                 </dd>
               </div>
-              <div className="flex items-center justify-between gap-4 border-b border-parchment/10 pb-3">
-                <dt className="text-parchment/60">Seating</dt>
-                <dd className="text-parchment/80">AC indoor & outdoor</dd>
+              <div className="flex items-center justify-between gap-4 border-b border-paper/10 pb-3">
+                <dt className="text-paper/60">Seating</dt>
+                <dd className="font-medium text-paper">Air-conditioned indoor &amp; family booths</dd>
+              </div>
+              <div className="flex items-center justify-between gap-4 border-b border-paper/10 pb-3">
+                <dt className="text-paper/60">Location</dt>
+                <dd className="font-medium text-paper">
+                  Confident House, Ikkanda Warrior Rd
+                </dd>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <dt className="text-parchment/60">Phone</dt>
+                <dt className="text-paper/60">Telephone</dt>
                 <dd>
                   <a
                     href={`tel:${siteConfig.phone.tel}`}
-                    className="inline-flex items-center gap-1.5 text-parchment/80 transition-colors hover:text-saffron"
+                    className="inline-flex items-center gap-1.5 font-medium text-paper hover:text-brass transition-colors"
                   >
-                    <Phone className="size-3.5" aria-hidden />
+                    <Phone className="size-3.5 text-brass" aria-hidden />
                     {siteConfig.phone.display}
                   </a>
                 </dd>
               </div>
             </dl>
+
+            <div className="mt-8 rounded-[2px] border border-paper/10 bg-ink-soft p-4 text-xs text-paper/65">
+              <p className="flex items-center gap-2 text-paper font-medium">
+                <MapPin className="size-3.5 text-brass" /> Need directions or parking details?
+              </p>
+              <p className="mt-1">
+                View our location, landmarks, and parking guide on the{" "}
+                <Link href="/visit" className="text-brass underline underline-offset-2 hover:text-brass-soft">
+                  Visit page →
+                </Link>
+              </p>
+            </div>
           </div>
 
-          <div className="rounded-2xl border border-parchment/12 bg-clove/50 p-5 sm:p-7">
+          <div className="rounded-[2px] border border-paper/15 bg-ink-soft p-6 sm:p-8">
             <ReservationForm />
           </div>
         </div>
       </div>
-
-      <Visit />
     </>
   );
 }

@@ -1,72 +1,89 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { ImagePlate } from "@/components/ui/image-plate";
-import { Reveal } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { signatureDishes, allDishes } from "@/lib/menu";
+import { formatRupees } from "@/lib/whatsapp";
 import { QuantityControl } from "@/components/cart/quantity-control";
-import { signatureDishes } from "@/lib/menu";
+import { Reveal } from "@/components/ui/reveal";
 
 export function Signatures() {
+  const dishPriceMap = new Map(allDishes.map((d) => [d.id, d.price]));
+
   return (
-    <section id="signatures" className="relative overflow-hidden bg-charcoal py-16 sm:py-20 lg:py-28">
-      <div
-        className="pointer-events-none absolute -left-40 top-0 size-[28rem] rounded-full bg-terracotta/10 blur-3xl"
-        aria-hidden
-      />
-      <div className="shell relative">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading
-            eyebrow="Signatures"
-            title={
-              <>
-                Four plates that explain
-                <br className="hidden sm:block" /> the whole kitchen.
-              </>
-            }
-            copy="Add anything you like to an enquiry and it arrives at the counter already itemised."
-          />
-          <Reveal delay={0.1}>
-            <Link
-              href="/menu"
-              className="inline-flex items-center gap-2 text-[13px] font-medium text-saffron transition-colors hover:text-saffron-soft"
-            >
-              Full menu
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-          </Reveal>
+    <section id="signatures" className="relative bg-ink py-20 lg:py-28 border-t border-paper/10">
+      <div className="shell">
+        <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <span className="label text-brass">THE KITCHEN&apos;S BENCHMARK</span>
+            <h2 className="display-lg mt-2 text-paper">
+              Four plates that define the kitchen.
+            </h2>
+            <p className="lede mt-2 max-w-xl text-paper/70">
+              Start with these. Add any dish directly to your WhatsApp order enquiry.
+            </p>
+          </div>
+          <Link
+            href="/menu"
+            className="inline-flex items-center gap-2 text-sm font-medium text-brass hover:text-brass-soft transition-colors"
+          >
+            Explore all 34 dishes
+            <ArrowRight className="size-4" />
+          </Link>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4">
-          {signatureDishes.map((dish, index) => (
-            <Reveal
-              key={dish.id}
-              delay={index * 0.06}
-              className="group flex flex-col overflow-hidden rounded-xl border border-parchment/10 bg-clove/60"
-            >
-              <ImagePlate
-                src={dish.image}
-                alt={dish.alt}
-                className="aspect-4/3 w-full"
-                imageClassName="transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              <div className="flex flex-1 flex-col p-4">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-saffron/80">
-                  {dish.kicker}
-                </p>
-                <h3 className="mt-1.5 font-display text-lg leading-snug text-parchment">
-                  {dish.name}
-                </h3>
-                <p className="mt-2 flex-1 text-[13px] leading-relaxed text-parchment/55">
-                  {dish.description}
-                </p>
-                <div className="mt-4 flex items-center justify-between gap-2">
-                  <QuantityControl dishId={dish.id} tone="quiet" />
-                  <span className="text-[11px] text-parchment/55">Price on ask</span>
+        {/* Asymmetric Editorial 2-Up Layout */}
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_1.2fr] lg:items-center">
+          {/* Left: Large Editorial Image Plate */}
+          <Reveal className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px] border border-paper/15 bg-ink-soft">
+            <Image
+              src="/images/restaurant/calicut-paradise-dining-experience.jpg"
+              alt="Calicut Paradise signature dining spread featuring slow-cooked dum biryani, flaky porotta and coastal specials"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-5">
+              <p className="text-xs uppercase tracking-[0.14em] text-brass">Dine-In & Takeaway</p>
+              <p className="text-sm font-medium text-paper/90">
+                Freshly cooked daily on Ikkanda Warrior Road.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Right: Typographic Hairline Dish List */}
+          <div className="divide-y divide-paper/10">
+            {signatureDishes.map((dish) => {
+              const price = dishPriceMap.get(dish.id);
+              return (
+                <div key={dish.id} className="py-5 first:pt-0 last:pb-0">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <div>
+                      <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-brass/80">
+                        {dish.kicker}
+                      </span>
+                      <h3 className="font-display text-[1.2rem] text-paper mt-0.5">
+                        {dish.name}
+                      </h3>
+                    </div>
+                    <div className="text-right">
+                      <span className="font-mono text-sm font-semibold tabular-nums text-brass">
+                        {typeof price === "number" ? formatRupees(price) : "Ask"}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-paper/65 max-w-prose">
+                    {dish.description}
+                  </p>
+
+                  <div className="mt-3.5 flex items-center justify-between">
+                    <span className="text-[11px] text-paper/40">1-tap order enquiry</span>
+                    <QuantityControl dishId={dish.id} tone="quiet" />
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

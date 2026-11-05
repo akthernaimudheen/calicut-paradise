@@ -11,11 +11,7 @@ type RevealProps = {
   as?: "div" | "section" | "li" | "article";
 };
 
-/**
- * Scroll-in reveal. Falls back to a plain element when the visitor prefers
- * reduced motion.
- */
-export function Reveal({ children, className, delay = 0, y = 22, as = "div" }: RevealProps) {
+export function Reveal({ children, className, delay = 0, y = 14, as = "div" }: RevealProps) {
   const reduceMotion = useReducedMotion();
   const Component = motion[as];
 
@@ -24,13 +20,15 @@ export function Reveal({ children, className, delay = 0, y = 22, as = "div" }: R
     return <Plain className={className}>{children}</Plain>;
   }
 
+  const clampedDelay = Math.min(delay, 0.08);
+
   return (
     <Component
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-64px" }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, margin: "-48px" }}
+      transition={{ duration: 0.5, delay: clampedDelay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </Component>

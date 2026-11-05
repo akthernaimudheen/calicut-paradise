@@ -50,11 +50,11 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Experience the soul of Malabar in Thrissur`,
+    title: `${siteConfig.name} — Authentic Malabar dining in Thrissur`,
     description: siteConfig.description,
     images: [
       {
-        url: "/images/brand/og-cover.jpg",
+        url: "/images/restaurant/calicut-paradise-dining-experience.jpg",
         width: 1200,
         height: 630,
         alt: `${siteConfig.name}, Thrissur`,
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} — Malabar restaurant in Thrissur`,
     description: siteConfig.description,
-    images: ["/images/brand/og-cover.jpg"],
+    images: ["/images/restaurant/calicut-paradise-dining-experience.jpg"],
   },
   robots: {
     index: true,
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#161210",
+  themeColor: "#14100e",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -85,10 +85,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" className={`${display.variable} ${body.variable} h-full antialiased`}>
-      <body className="min-h-dvh bg-charcoal">
+      <body className="min-h-dvh bg-ink">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-100 focus:rounded-full focus:bg-saffron focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-charcoal"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-100 focus:rounded-[2px] focus:bg-brass focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink"
         >
           Skip to content
         </a>
@@ -101,7 +101,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </CartProvider>
         <script
           type="application/ld+json"
-          // Structured data is generated from the same config as the visible page.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd()) }}
         />
       </body>

@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Menu & indicative prices",
+  title: "Menu & Indicative Prices — Calicut Paradise",
   description:
     "Browse the Calicut Paradise menu — biryani and ghee rice, Malabar specialities, charcoal grills, Kerala breads, rolls, desserts and Sulaimani. Build an itemised WhatsApp enquiry for dine-in, takeaway or delivery.",
   alternates: { canonical: "/menu" },
@@ -41,22 +41,21 @@ export default async function MenuPage({
         }}
       />
 
-      <div className="shell pb-28 pt-24 sm:pt-28">
-        <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-[11px] text-parchment/60">
-          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-saffron">
+      <div className="shell pb-28 pt-24 sm:pt-28 bg-ink text-paper">
+        <nav aria-label="Breadcrumb" className="mb-6 flex items-center gap-1.5 text-xs text-paper/60">
+          <Link href="/" className="inline-flex items-center gap-1 transition-colors hover:text-brass">
             <ArrowLeft className="size-3" aria-hidden />
             Home
           </Link>
-          <ChevronRight className="size-3 text-parchment/20" aria-hidden />
-          <span className="text-parchment/70">Menu</span>
+          <ChevronRight className="size-3 text-paper/20" aria-hidden />
+          <span className="text-paper/80 font-medium">Menu</span>
         </nav>
 
         <div className="max-w-2xl">
-          <span className="eyebrow">The menu</span>
-          <h1 className="display-lg mt-4">Order without the guesswork.</h1>
-          <p className="lede mt-4 text-[14px]">
-            Everything the kitchen runs, in one place. Add what you want, choose dine-in, takeaway or
-            delivery, and send an itemised enquiry straight to the counter on WhatsApp.
+          <span className="label text-brass">THE KITCHEN OFFERING</span>
+          <h1 className="display-lg mt-2 text-paper">The complete menu.</h1>
+          <p className="lede mt-3 text-paper/75">
+            Everything the kitchen cooks, in one place. Add any dish to your enquiry and send your itemised list directly to the counter on WhatsApp.
           </p>
         </div>
 

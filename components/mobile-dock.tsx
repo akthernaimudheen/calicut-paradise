@@ -36,14 +36,13 @@ const links = [
   },
 ] as const;
 
-/** Sticky mobile action bar: the four things a hungry visitor actually wants. */
 export function MobileDock() {
   const pathname = usePathname();
 
   return (
     <nav
       aria-label="Quick actions"
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-parchment/12 bg-charcoal/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-paper/10 bg-ink/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl md:hidden"
     >
       <ul className="grid grid-cols-4">
         {links.map((link) => {
@@ -56,21 +55,24 @@ export function MobileDock() {
             </>
           );
           return (
-            <li key={link.label}>
+            <li key={link.label} className="relative">
+              {active ? (
+                <div className="absolute inset-x-4 top-0 h-[2px] bg-brass" />
+              ) : null}
               {link.external ? (
                 <a
                   href={link.href}
                   target={link.href.startsWith("tel:") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className="flex min-h-14 flex-col items-center justify-center gap-1 py-2 text-parchment/65 transition-colors hover:text-saffron active:bg-parchment/5"
+                  className="flex min-h-[52px] flex-col items-center justify-center gap-1 py-1.5 text-paper/70 transition-colors hover:text-brass active:bg-paper/5"
                 >
                   {content}
                 </a>
               ) : (
                 <Link
                   href={link.href}
-                  className={`flex min-h-14 flex-col items-center justify-center gap-1 py-2 transition-colors active:bg-parchment/5 ${
-                    active ? "text-saffron" : "text-parchment/65 hover:text-saffron"
+                  className={`flex min-h-[52px] flex-col items-center justify-center gap-1 py-1.5 transition-colors active:bg-paper/5 ${
+                    active ? "text-brass font-medium" : "text-paper/70 hover:text-brass"
                   }`}
                 >
                   {content}

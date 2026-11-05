@@ -6,64 +6,61 @@ import { siteConfig } from "@/lib/site";
 
 export function Visit() {
   return (
-    <section id="visit" className="relative bg-clove py-16 sm:py-20 lg:py-24">
-      <div className="shell grid gap-8 lg:grid-cols-2 lg:gap-12">
+    <section id="visit" className="relative bg-ink py-20 lg:py-28 text-paper border-t border-paper/10">
+      <div className="shell grid gap-10 lg:grid-cols-2 lg:gap-14 items-center">
         <Reveal>
-          <span className="eyebrow">Find us</span>
-          <h2 className="display-lg mt-4">Ikkanda Warrior Road, Kokkala.</h2>
-          <p className="lede mt-4 max-w-md text-[14px]">
-            Confident House, on the stretch between the KSRTC stand and Veliyannur. Park at the
-            building and walk straight in.
+          <span className="label text-brass">LOCATION &amp; ARRIVAL</span>
+          <h2 className="display-lg mt-2 text-paper">Ikkanda Warrior Road, Kokkala.</h2>
+          <p className="lede mt-3 max-w-md text-paper/75">
+            Confident House, on the stretch between the KSRTC stand and Veliyannur. Park at the building forecourt and step straight inside.
           </p>
 
-          <div className="mt-7 space-y-4">
-            <div className="flex gap-3">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+          <div className="mt-8 space-y-5">
+            <div className="flex items-start gap-3.5">
+              <MapPin className="mt-1 size-4 shrink-0 text-brass" aria-hidden />
               <div>
-                <p className="text-[13px] font-medium text-parchment/90">Address</p>
-                <address className="mt-0.5 text-[13px] not-italic leading-relaxed text-parchment/55">
-                  {siteConfig.address.line1}
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-paper">Address</p>
+                <address className="mt-0.5 text-sm not-italic leading-relaxed text-paper/70">
+                  {siteConfig.address.line1}, {siteConfig.address.line2}
                   <br />
-                  {siteConfig.address.line2}, {siteConfig.address.city}, {siteConfig.address.state}{" "}
-                  {siteConfig.address.postalCode}
+                  {siteConfig.address.city}, {siteConfig.address.state} {siteConfig.address.postalCode}
                 </address>
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <Clock className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+            <div className="flex items-start gap-3.5">
+              <Clock className="mt-1 size-4 shrink-0 text-brass" aria-hidden />
               <div>
-                <p className="text-[13px] font-medium text-parchment/90">Hours</p>
-                <p className="mt-0.5 text-[13px] text-parchment/55">
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-paper">Kitchen Hours</p>
+                <p className="mt-0.5 text-sm text-paper/70">
                   {siteConfig.hours.days} · {siteConfig.hours.display}
                 </p>
                 <HoursBadge className="mt-2" />
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <Car className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+            <div className="flex items-start gap-3.5">
+              <Car className="mt-1 size-4 shrink-0 text-brass" aria-hidden />
               <div>
-                <p className="text-[13px] font-medium text-parchment/90">Parking</p>
-                <p className="mt-0.5 text-[13px] text-parchment/55">
-                  On-site parking at Confident House. Confirm valet availability with the restaurant
-                  on the day.
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-paper">Parking</p>
+                <p className="mt-0.5 text-sm text-paper/70">
+                  Dedicated on-site parking at Confident House. Easy access for elders and families.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-3">
-              <Train className="mt-0.5 size-4 shrink-0 text-saffron" aria-hidden />
+            <div className="flex items-start gap-3.5">
+              <Train className="mt-1 size-4 shrink-0 text-brass" aria-hidden />
               <div>
-                <p className="text-[13px] font-medium text-parchment/90">Getting here</p>
-                <p className="mt-0.5 text-[13px] text-parchment/55">
-                  A short auto ride from Thrissur Railway Station and the KSRTC bus stand.
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-paper">Transit</p>
+                <p className="mt-0.5 text-sm text-paper/70">
+                  A short 5-minute auto ride from Thrissur Railway Station and the KSRTC central stand.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="mt-7 flex flex-wrap gap-2.5">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/visit" className="btn btn-primary">
               <Navigation className="size-4" aria-hidden />
               Location &amp; Parking Guide
@@ -75,25 +72,25 @@ export function Visit() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.08} className="min-h-72">
-          <div className="h-full overflow-hidden rounded-2xl border border-parchment/12 bg-charcoal">
+        <Reveal delay={0.06} className="h-full min-h-[320px]">
+          <div className="h-full min-h-[320px] overflow-hidden rounded-[2px] border border-paper/15 bg-ink-soft">
             <iframe
               title="Map showing Calicut Paradise on Ikkanda Warrior Road, Thrissur"
               src={siteConfig.links.mapEmbed}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="size-full min-h-72 border-0 grayscale-[0.35] contrast-[1.05]"
+              className="size-full min-h-[320px] border-0 grayscale-[0.25] contrast-[1.05]"
             />
           </div>
-          <p className="mt-3 text-[11px] text-parchment/55">
-            Map loads from Google when scrolled into view.{" "}
+          <p className="mt-3 text-xs text-paper/60">
+            Confident House, Thrissur.{" "}
             <a
               href={siteConfig.links.googleReviews}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline decoration-parchment/25 underline-offset-2 hover:text-saffron"
+              className="underline decoration-paper/30 underline-offset-2 hover:text-brass text-brass"
             >
-              Open in Maps
+              Open in Google Maps →
             </a>
           </p>
         </Reveal>

@@ -5,7 +5,6 @@ import { useCart } from "./cart-provider";
 
 type Props = {
   dishId: string;
-  /** "solid" for cards on light backgrounds, "quiet" for dense menu rows. */
   tone?: "solid" | "quiet";
   className?: string;
 };
@@ -18,14 +17,14 @@ export function QuantityControl({ dishId, tone = "solid", className = "" }: Prop
   if (quantity === 0) {
     const base =
       tone === "solid"
-        ? "border-saffron/50 bg-saffron/12 text-saffron hover:bg-saffron hover:text-charcoal"
-        : "border-parchment/20 text-parchment/75 hover:border-saffron/60 hover:text-saffron";
+        ? "border-brass bg-brass text-ink hover:bg-brass-soft"
+        : "border-paper/25 text-paper/85 hover:border-brass hover:text-brass";
     return (
       <button
         type="button"
         onClick={() => add(dishId)}
         aria-label="Add to order enquiry"
-        className={`inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3.5 text-[12px] font-semibold transition-colors ${base} ${className}`}
+        className={`inline-flex min-h-[38px] items-center gap-1.5 rounded-[2px] border px-3 text-[12px] font-semibold transition-colors ${base} ${className}`}
       >
         {justAdded ? <Check className="size-3.5" aria-hidden /> : <Plus className="size-3.5" aria-hidden />}
         Add
@@ -35,28 +34,28 @@ export function QuantityControl({ dishId, tone = "solid", className = "" }: Prop
 
   const shell =
     tone === "solid"
-      ? "border-saffron/50 bg-saffron/12 text-saffron"
-      : "border-parchment/20 text-parchment/80";
+      ? "border-brass/50 bg-ink-soft text-brass"
+      : "border-paper/25 bg-ink-soft text-paper";
 
   return (
     <div
-      className={`inline-flex min-h-9 items-center gap-1 rounded-full border ${shell} ${className}`}
+      className={`inline-flex min-h-[38px] items-center gap-1 rounded-[2px] border ${shell} ${className}`}
     >
       <button
         type="button"
         onClick={() => decrement(dishId)}
-        className="grid size-9 place-items-center rounded-full transition-colors hover:bg-saffron/15"
+        className="grid size-9 place-items-center rounded-[2px] transition-colors hover:bg-brass/20 text-paper/80 hover:text-brass"
         aria-label="Remove one"
       >
         <Minus className="size-3.5" aria-hidden />
       </button>
-      <span className="min-w-5 text-center text-[13px] font-semibold tabular-nums" aria-live="polite">
+      <span className="min-w-6 text-center font-mono text-[13px] font-semibold tabular-nums text-paper" aria-live="polite">
         {quantity}
       </span>
       <button
         type="button"
         onClick={() => add(dishId)}
-        className="grid size-9 place-items-center rounded-full transition-colors hover:bg-saffron/15"
+        className="grid size-9 place-items-center rounded-[2px] transition-colors hover:bg-brass/20 text-paper/80 hover:text-brass"
         aria-label="Add one more"
       >
         <Plus className="size-3.5" aria-hidden />

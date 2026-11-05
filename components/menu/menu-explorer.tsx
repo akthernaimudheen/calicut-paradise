@@ -120,10 +120,10 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
                     setQuery("");
                   }}
                   aria-pressed={active}
-                  className={`shrink-0 rounded-full border px-3.5 py-2 text-[12px] font-medium transition-colors ${
+                  className={`shrink-0 rounded-[2px] border px-3 py-1.5 text-xs font-medium transition-colors ${
                     active
-                      ? "border-saffron bg-saffron text-charcoal"
-                      : "border-parchment/15 text-parchment/60 hover:border-parchment/35 hover:text-parchment"
+                      ? "border-brass bg-brass text-ink"
+                      : "border-paper/20 text-paper/70 hover:border-brass/50 hover:text-paper"
                   }`}
                 >
                   {section.short}
@@ -136,7 +136,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
 
       <div className="grid gap-10 pt-8 lg:grid-cols-[1fr_20rem] lg:gap-12">
         <div>
-          <p className="flex items-start gap-2 rounded-lg border border-parchment/10 bg-clove/40 px-3.5 py-3 text-[11.5px] leading-relaxed text-parchment/60">
+          <p className="flex items-start gap-2 rounded-[2px] border border-paper/15 bg-ink-soft px-3.5 py-3 text-[11.5px] leading-relaxed text-parchment/60">
             <Info className="mt-0.5 size-3.5 shrink-0 text-saffron/70" aria-hidden />
             {priceNote} Dishes marked &ldquo;Ask&rdquo; have no published price. Availability is
             confirmed by the restaurant.
@@ -152,7 +152,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
           </p>
 
           {sections.length === 0 ? (
-            <div className="mt-8 rounded-xl border border-parchment/10 bg-clove/40 px-5 py-10 text-center">
+            <div className="mt-8 rounded-[2px] border border-paper/15 bg-ink-soft px-5 py-10 text-center">
               <p className="font-display text-xl text-parchment">Nothing matches that yet.</p>
               <p className="mx-auto mt-2 max-w-sm text-[13px] text-parchment/60">
                 Try “biryani”, “porotta” or “paneer” — or clear the search and browse by section.
@@ -202,11 +202,11 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
                             {dish.tags?.map((tag) => (
                               <span
                                 key={tag}
-                                className={`rounded-full px-2 py-0.5 text-[9.5px] font-semibold uppercase tracking-[0.12em] ${
-                                  tag === "chef" || tag === "signature"
-                                    ? "bg-saffron/15 text-saffron"
-                                    : "bg-parchment/8 text-parchment/60"
-                                }`}
+                                className={`rounded-[2px] px-1.5 py-0.5 text-[10.5px] font-medium tracking-[0.04em] ${
+                                tag === "chef" || tag === "signature"
+                                  ? "bg-brass/15 text-brass"
+                                  : "bg-paper/10 text-paper/70"
+                              }`}
                               >
                                 {TAG_LABEL[tag]}
                               </span>
@@ -218,7 +218,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
                         </div>
 
                         <div className="flex shrink-0 flex-col items-end gap-2">
-                          <p className="text-[13px] font-semibold tabular-nums text-parchment/85">
+                          <p className="font-mono text-[13px] font-semibold tabular-nums text-brass">
                             {typeof dish.price === "number" ? formatRupees(dish.price) : "Ask"}
                           </p>
                           <QuantityControl dishId={dish.id} tone="quiet" />
@@ -235,7 +235,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
         <aside className="hidden lg:block">
           <div className="sticky top-40 space-y-4">
             <CartSummary />
-            <div className="rounded-xl border border-parchment/10 bg-clove/40 p-4 text-[11.5px] leading-relaxed text-parchment/60">
+            <div className="rounded-[2px] border border-paper/15 bg-ink-soft p-4 text-[11.5px] leading-relaxed text-parchment/60">
               <p className="font-medium text-parchment/70">How the enquiry works</p>
               <ol className="mt-2 list-decimal space-y-1 pl-4">
                 <li>Pick your dishes and quantities.</li>
