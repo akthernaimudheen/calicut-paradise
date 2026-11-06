@@ -42,7 +42,7 @@ export function Signatures() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-5">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/80 to-transparent px-5 pb-5 pt-16">
               <p className="text-xs uppercase tracking-[0.14em] text-brass">Dine-In & Takeaway</p>
               <p className="text-sm font-medium text-paper/90">
                 Freshly cooked daily on Ikkanda Warrior Road.

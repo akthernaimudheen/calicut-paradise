@@ -50,18 +50,22 @@ export function SiteHeader() {
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="shell flex h-16 items-center justify-between gap-4 sm:h-18">
-          <Link href="/" className="group flex items-center gap-3">
+        <div className="shell flex h-16 items-center justify-between gap-3 sm:h-18 sm:gap-4">
+          <Link
+            href="/"
+            aria-label={`${siteConfig.name} — home`}
+            className="group flex min-w-0 items-center gap-2.5 sm:gap-3"
+          >
             <CalicutParadiseLogo
-              size={36}
               variant="gold"
-              className="transition-transform duration-300 group-hover:scale-105"
+              className="[--logo-size:46px] transition-transform duration-300 group-hover:scale-105 sm:[--logo-size:36px]"
             />
-            <span className="leading-tight">
-              <span className="block font-heading text-[16px] font-medium tracking-[0.02em] text-paper sm:text-[18px]">
-                Calicut Paradise
+            <span className="flex min-w-0 flex-col justify-center leading-none">
+              <span className="font-heading text-[15px] font-medium leading-[1.12] tracking-[0.02em] text-paper sm:text-[18px] sm:leading-tight">
+                Calicut
+                <br className="sm:hidden" /> Paradise
               </span>
-              <span className="block text-[9px] font-semibold uppercase tracking-[0.24em] text-brass">
+              <span className="mt-1 block text-[8px] font-semibold uppercase tracking-[0.24em] text-brass sm:mt-0.5 sm:text-[9px]">
                 Thrissur
               </span>
             </span>
@@ -85,7 +89,7 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             <a
               href={`tel:${siteConfig.phone.tel}`}
               className="hidden items-center gap-2 text-[13px] font-medium text-paper/70 transition-colors hover:text-brass md:flex"
@@ -97,7 +101,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={openCart}
-              className="relative grid size-10 place-items-center rounded-[2px] border border-paper/15 text-paper/85 transition-colors hover:border-brass hover:text-brass"
+              className="relative grid size-11 place-items-center rounded-[2px] border border-paper/15 text-paper/85 transition-colors hover:border-brass hover:text-brass sm:size-10"
               aria-label={count > 0 ? `Open order enquiry, ${count} items` : "Open order enquiry"}
             >
               <ShoppingBag className="size-4" aria-hidden="true" />
@@ -119,7 +123,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setMenuOpen((open) => !open)}
-              className="grid size-10 place-items-center rounded-[2px] border border-paper/20 bg-ink/50 text-paper transition-colors hover:border-brass hover:text-brass lg:hidden"
+              className="grid size-11 place-items-center rounded-[2px] border border-paper/20 bg-ink/50 text-paper transition-colors hover:border-brass hover:text-brass sm:size-10 lg:hidden"
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}

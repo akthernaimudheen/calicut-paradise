@@ -144,8 +144,8 @@ export default function VisitPage() {
                 sizes="(max-width: 1024px) 100vw, 700px"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-xs text-paper/80">
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 text-xs text-paper/85">
                 Confident House frontage on Ikkanda Warrior Road with gold serif signage and ground-level forecourt parking.
               </div>
             </div>

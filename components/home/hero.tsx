@@ -4,7 +4,7 @@ import { ArrowRight, CalendarDays, Clock, MapPin, Star } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[600px] h-[82vh] max-h-[820px] w-full overflow-hidden bg-ink">
+    <section className="relative w-full overflow-hidden bg-ink min-h-[600px] lg:h-[82svh] lg:max-h-[820px]">
       {/* Background Image: Authentic Calicut Paradise Interior */}
       <div className="absolute inset-0">
         <Image
@@ -36,7 +36,7 @@ export function Hero() {
 
       <div className="shell relative z-10 flex h-full flex-col justify-between pb-8 pt-24 sm:pt-28 lg:pb-10">
         <div className="my-auto max-w-2xl pt-6">
-          <p className="label text-brass">
+          <p className="label text-balance text-brass">
             CONFIDENT HOUSE · IKKANDA WARRIOR ROAD, THRISSUR
           </p>
 
@@ -48,12 +48,12 @@ export function Hero() {
             Slow-cooked kaima rice dum biryanis, sizzling coastal seafood, flaky nool porotta, and hot spiced Sulaimani in the heart of Thrissur.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3.5">
-            <Link href="/menu" className="btn btn-primary">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link href="/menu" className="btn btn-primary max-sm:w-full">
               Explore the menu
               <ArrowRight className="size-4" />
             </Link>
-            <Link href="/reserve" className="btn btn-ghost">
+            <Link href="/reserve" className="btn btn-ghost max-sm:w-full">
               <CalendarDays className="size-4" />
               Reserve a table
             </Link>

@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3.5">
-              <CalicutParadiseLogo size={42} variant="gold" />
+              <CalicutParadiseLogo variant="gold" className="[--logo-size:42px]" />
               <span>
                 <span className="block font-heading text-xl text-paper">Calicut Paradise</span>
                 <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-brass">

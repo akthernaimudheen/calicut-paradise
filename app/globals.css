@@ -116,6 +116,14 @@
     }
   }
 
+  /* Brand crest size is controlled by --logo-size so it can respond to the
+     viewport; the 483px source image must never dictate the rendered size. */
+  .logo-mark {
+    --logo-size: 42px;
+    width: var(--logo-size);
+    flex: none;
+  }
+
   .eyebrow,
   .label {
     display: inline-flex;
