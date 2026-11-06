@@ -4,8 +4,9 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { CalicutParadiseLogo } from "@/components/ui/logo";
 
 export function SiteFooter() {
+  // Mobile padding clears the quick-action dock plus the enquiry bar that floats above it.
   return (
-    <footer className="relative border-t border-paper/10 bg-ink pb-24 pt-16 md:pb-12 text-paper">
+    <footer className="relative border-t border-paper/10 bg-ink pb-[calc(8.5rem+env(safe-area-inset-bottom))] pt-16 md:pb-12 text-paper">
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr]">
           <div>

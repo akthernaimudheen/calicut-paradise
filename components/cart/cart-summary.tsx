@@ -72,13 +72,16 @@ export function CartSummary() {
   );
 }
 
-/** Mobile sticky bar that sits above the bottom dock. */
+/**
+ * Mobile sticky bar that sits above the bottom dock. Its offset includes the
+ * dock's safe-area inset so it never slides underneath it on iPhone.
+ */
 export function CartBar() {
   const { count, openCart } = useCart();
   if (count === 0) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-14 z-40 border-t border-saffron/25 bg-charcoal/95 px-4 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
+    <div className="fixed inset-x-0 bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-40 border-t border-saffron/25 bg-charcoal/95 px-4 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
       <button
         type="button"
         onClick={openCart}
