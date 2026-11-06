@@ -101,11 +101,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
                 setQuery("");
               }}
               aria-pressed={category === "all" && !normalisedQuery}
-              className={`shrink-0 rounded-full border px-3.5 py-2 text-[12px] font-medium transition-colors ${
-                category === "all" && !normalisedQuery
-                  ? "border-saffron bg-saffron text-charcoal"
-                  : "border-parchment/15 text-parchment/60 hover:border-parchment/35 hover:text-parchment"
-              }`}
+              className="chip"
             >
               Everything
             </button>
@@ -120,11 +116,7 @@ export function MenuExplorer({ initialCategory = "all" }: { initialCategory?: st
                     setQuery("");
                   }}
                   aria-pressed={active}
-                  className={`shrink-0 rounded-[2px] border px-3 py-1.5 text-xs font-medium transition-colors ${
-                    active
-                      ? "border-brass bg-brass text-ink"
-                      : "border-paper/20 text-paper/70 hover:border-brass/50 hover:text-paper"
-                  }`}
+                  className="chip"
                 >
                   {section.short}
                 </button>

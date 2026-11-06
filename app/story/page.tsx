@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
+import { CTA } from "@/components/ui/cta";
 
 export const metadata: Metadata = {
   title: "Our Story — The Malabar Kitchen at Confident House",
@@ -133,10 +134,9 @@ export default function StoryPage() {
                 Dining out in Thrissur should feel effortless. At Confident House on Ikkanda Warrior Road, we created a space with comfortable rattan booths, central air-conditioning, and hassle-free forecourt parking so dinner never begins with circling the block.
               </p>
               <div className="mt-6">
-                <Link href="/menu" className="btn btn-primary">
+                <CTA href="/menu" variant="primary" arrow>
                   Explore our menu
-                  <ArrowRight className="size-4" />
-                </Link>
+                </CTA>
               </div>
             </div>
           </section>

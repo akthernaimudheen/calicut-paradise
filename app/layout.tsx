@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-dvh bg-ink">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-100 focus:rounded-[2px] focus:bg-brass focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-100 focus:rounded-[2px] focus:border focus:border-brass focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-brass"
         >
           Skip to content
         </a>

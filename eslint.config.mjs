@@ -5,5 +5,7 @@ import nextTs from "eslint-config-next/typescript";
 export default defineConfig([
   ...nextVitals,
   ...nextTs,
-  globalIgnores([".next/**", "node_modules/**", "next-env.d.ts"]),
+  // `.open-next` is generated Worker output; linting it reports on bundled
+  // framework code rather than this project's source.
+  globalIgnores([".next/**", ".open-next/**", "node_modules/**", "next-env.d.ts"]),
 ]);

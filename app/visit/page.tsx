@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowUpRight, Car, Clock, ChevronRight, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
+import { ArrowLeft, Car, Clock, ChevronRight, MapPin, MessageCircle, Navigation, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
+import { CTA } from "@/components/ui/cta";
 
 export const metadata: Metadata = {
   title: "Visit Us & Directions",
@@ -71,16 +72,15 @@ export default function VisitPage() {
               <p className="text-xs text-paper/60 border-t border-paper/10 pt-3">
                 <strong className="text-paper">Landmark:</strong> {siteConfig.address.landmark}
               </p>
-              <a
+              <CTA
                 href={siteConfig.links.directions}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary w-full inline-flex items-center justify-center gap-2 text-sm"
+                variant="primary"
+                arrow="external"
+                className="max-sm:w-auto max-sm:whitespace-nowrap max-sm:px-4 max-sm:text-[13px]"
               >
-                <Navigation className="size-4" />
-                <span>Open in Google Maps</span>
-                <ArrowUpRight className="size-3.5" />
-              </a>
+                <Navigation className="size-4 shrink-0" aria-hidden />
+                Open in Google Maps
+              </CTA>
             </div>
 
             <div className="rounded-[2px] border border-paper/15 bg-ink-soft p-6 sm:p-7 space-y-4">
@@ -112,23 +112,19 @@ export default function VisitPage() {
                 <Phone className="size-4 text-brass" />
                 <h2 className="font-display text-lg text-paper">Direct Contact</h2>
               </div>
-              <div className="grid grid-cols-2 gap-3 pt-1">
-                <a
-                  href={`tel:${siteConfig.phone.tel}`}
-                  className="btn btn-ghost inline-flex items-center justify-center gap-2 text-xs hover:border-brass hover:text-brass"
-                >
-                  <Phone className="size-3.5 text-brass" />
-                  <span>Call Us</span>
-                </a>
-                <a
+              <div className="grid grid-cols-1 gap-3 pt-1 min-[400px]:grid-cols-2">
+                <CTA href={`tel:${siteConfig.phone.tel}`} variant="secondary" size="sm">
+                  <Phone className="size-3.5 shrink-0 text-brass" aria-hidden />
+                  Call us
+                </CTA>
+                <CTA
                   href={`https://wa.me/${siteConfig.phone.whatsapp}?text=Hello%20Calicut%20Paradise!`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-ghost inline-flex items-center justify-center gap-2 text-xs hover:border-brass hover:text-brass"
+                  variant="secondary"
+                  size="sm"
                 >
-                  <MessageCircle className="size-3.5 text-brass" />
-                  <span>WhatsApp</span>
-                </a>
+                  <MessageCircle className="size-3.5 shrink-0 text-brass" aria-hidden />
+                  WhatsApp
+                </CTA>
               </div>
             </div>
           </div>

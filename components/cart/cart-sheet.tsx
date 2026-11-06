@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   ChevronDown,
@@ -12,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { CTA, CtaButton } from "@/components/ui/cta";
 import {
   buildOrderMessage,
   formatRupees,
@@ -115,9 +115,9 @@ export function CartSheet() {
                   <p className="text-[13px] text-parchment/55">
                     Add dishes from the menu and they will be listed here, ready to send.
                   </p>
-                  <Link href="/menu" onClick={closeCart} className="btn btn-primary !min-h-10 !px-4 !text-[13px]">
+                  <CTA href="/menu" onClick={closeCart} variant="secondary" size="sm">
                     Browse the menu
-                  </Link>
+                  </CTA>
                 </div>
               ) : (
                 <div className="space-y-5">
@@ -180,10 +180,10 @@ export function CartSheet() {
                             key={type}
                             type="button"
                             onClick={() => setOrderType(type)}
-                            className={`rounded-md py-1.5 text-center text-xs font-medium transition-all ${
+                            className={`rounded-[2px] border py-1.5 text-center text-xs font-medium transition-colors ${
                               active
-                                ? "bg-saffron text-charcoal shadow-sm font-semibold"
-                                : "text-parchment/70 hover:text-parchment"
+                                ? "border-brass/70 bg-brass/12 text-parchment font-semibold"
+                                : "border-transparent text-parchment/70 hover:border-parchment/20 hover:text-parchment"
                             }`}
                           >
                             {shortLabel}
@@ -251,10 +251,10 @@ export function CartSheet() {
                     {error}
                   </p>
                 ) : null}
-                <button type="button" onClick={handleSend} className="btn btn-primary w-full shadow-lg">
-                  <MessageCircle className="size-4" aria-hidden />
+                <CtaButton onClick={handleSend} variant="primary" className="w-full">
+                  <MessageCircle className="size-4 shrink-0" aria-hidden />
                   Send Order on WhatsApp (1 Tap)
-                </button>
+                </CtaButton>
                 <p className="mt-2.5 flex items-start gap-1.5 text-[10.5px] leading-snug text-parchment/55">
                   <Info className="mt-0.5 size-3 shrink-0" aria-hidden />
                   Enquiry only. No payment is taken here, delivery is not booked automatically, and

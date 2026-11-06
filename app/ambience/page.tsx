@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, CalendarDays, ChevronRight } from "lucide-react";
+import { ArrowLeft, CalendarDays, ChevronRight } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
+import { CTA } from "@/components/ui/cta";
 
 export const metadata: Metadata = {
   title: "Ambience & Dining Hall",
@@ -124,15 +125,14 @@ export default function AmbiencePage() {
                 A landmark corner building in Kokkala, Veliyannur with bold gold serif signage, teak cladding, and large glass windows.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/reserve" className="btn btn-primary">
-                  <CalendarDays className="size-4" />
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <CTA href="/reserve" variant="primary" className="max-sm:w-full">
+                  <CalendarDays className="size-4 shrink-0" aria-hidden />
                   Reserve a table
-                </Link>
-                <Link href="/visit" className="btn btn-ghost">
+                </CTA>
+                <CTA href="/visit" variant="secondary" arrow className="max-sm:w-full">
                   View map &amp; parking
-                  <ArrowRight className="size-4" />
-                </Link>
+                </CTA>
               </div>
             </div>
           </section>

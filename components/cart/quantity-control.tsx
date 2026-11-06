@@ -17,14 +17,14 @@ export function QuantityControl({ dishId, tone = "solid", className = "" }: Prop
   if (quantity === 0) {
     const base =
       tone === "solid"
-        ? "border-brass bg-brass text-ink hover:bg-brass-soft"
+        ? "border-brass/70 text-paper hover:border-brass hover:bg-brass/12"
         : "border-paper/25 text-paper/85 hover:border-brass hover:text-brass";
     return (
       <button
         type="button"
         onClick={() => add(dishId)}
         aria-label="Add to order enquiry"
-        className={`inline-flex min-h-[38px] items-center gap-1.5 rounded-[2px] border px-3 text-[12px] font-semibold transition-colors ${base} ${className}`}
+        className={`inline-flex min-h-[38px] shrink-0 items-center gap-1.5 rounded-[2px] border px-3 text-[12px] font-medium tracking-[0.02em] transition-colors ${base} ${className}`}
       >
         {justAdded ? <Check className="size-3.5" aria-hidden /> : <Plus className="size-3.5" aria-hidden />}
         Add

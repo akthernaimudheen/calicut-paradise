@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CalendarDays, CheckCircle2 } from "lucide-react";
+import { CalendarDays, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
+import { CTA } from "@/components/ui/cta";
 
 export function Ambience() {
   return (
@@ -54,18 +54,14 @@ export function Ambience() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link href="/reserve" className="btn btn-primary">
-                  <CalendarDays className="size-4" />
+              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+                <CTA href="/reserve" variant="primary" className="whitespace-nowrap max-sm:w-full">
+                  <CalendarDays className="size-4 shrink-0" aria-hidden />
                   Book the family table
-                </Link>
-                <Link
-                  href="/ambience"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-brass hover:text-brass-soft transition-colors"
-                >
+                </CTA>
+                <CTA href="/ambience" variant="tertiary" arrow>
                   View dining gallery
-                  <ArrowRight className="size-4" />
-                </Link>
+                </CTA>
               </div>
             </Reveal>
           </div>

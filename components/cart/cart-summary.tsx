@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowRight, MessageCircle, ShoppingBag } from "lucide-react";
+import { MessageCircle, ShoppingBag } from "lucide-react";
 import { useCart } from "./cart-provider";
 import { formatRupees } from "@/lib/whatsapp";
+import { CtaButton } from "@/components/ui/cta";
 
 /** Desktop sidebar summary — always visible next to the menu. */
 export function CartSummary() {
@@ -56,15 +57,10 @@ export function CartSummary() {
         </>
       )}
 
-      <button
-        type="button"
-        onClick={openCart}
-        className="btn btn-primary mt-4 w-full !min-h-11 !text-[13px]"
-      >
-        <MessageCircle className="size-4" aria-hidden />
+      <CtaButton onClick={openCart} variant="primary" arrow className="mt-4 w-full">
+        <MessageCircle className="size-4 shrink-0" aria-hidden />
         {count === 0 ? "Open order enquiry" : "Review & send"}
-        <ArrowRight className="size-3.5" aria-hidden />
-      </button>
+      </CtaButton>
       <p className="mt-2 text-center text-[10px] uppercase tracking-[0.14em] text-parchment/55">
         Enquiry only · not a confirmed order
       </p>
@@ -82,14 +78,10 @@ export function CartBar() {
 
   return (
     <div className="fixed inset-x-0 bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-40 border-t border-saffron/25 bg-charcoal/95 px-4 py-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
-      <button
-        type="button"
-        onClick={openCart}
-        className="btn btn-primary w-full !min-h-11 !text-[13px]"
-      >
-        <ShoppingBag className="size-4" aria-hidden />
+      <CtaButton onClick={openCart} variant="primary" className="w-full">
+        <ShoppingBag className="size-4 shrink-0" aria-hidden />
         Review order enquiry · {count} item{count === 1 ? "" : "s"}
-      </button>
+      </CtaButton>
     </div>
   );
 }

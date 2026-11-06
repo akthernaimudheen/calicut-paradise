@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CalendarCheck, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site";
+import { CtaButton } from "@/components/ui/cta";
 import {
   buildReservationMessage,
   whatsappUrl,
@@ -225,10 +226,10 @@ export function ReservationForm({ compact = false }: { compact?: boolean }) {
         </p>
       ) : null}
 
-      <button type="submit" className="btn btn-primary w-full">
-        <MessageCircle className="size-4" aria-hidden />
-        Send reservation enquiry on WhatsApp
-      </button>
+      <CtaButton type="submit" variant="primary" className="w-full">
+        <MessageCircle className="size-4 shrink-0" aria-hidden />
+        Send on WhatsApp
+      </CtaButton>
 
       <p className="flex items-start gap-2 text-[11px] leading-relaxed text-parchment/60">
         <CalendarCheck className="mt-0.5 size-3.5 shrink-0" aria-hidden />

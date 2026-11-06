@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowUpRight, Clock, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site";
 import { CalicutParadiseLogo } from "@/components/ui/logo";
+import { CTA } from "@/components/ui/cta";
 
 export function SiteFooter() {
   // Mobile padding clears the quick-action dock plus the enquiry bar that floats above it.
@@ -24,33 +25,20 @@ export function SiteFooter() {
               Warrior Road — with dedicated parking at Confident House.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              <a
-                href={siteConfig.links.swiggy}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-[2px] border border-paper/15 px-3 py-1.5 text-xs text-paper/70 transition-colors hover:border-brass hover:text-brass"
-              >
+              <CTA href={siteConfig.links.swiggy} variant="secondary" size="sm" arrow="external">
                 Order on Swiggy
-                <ArrowUpRight className="size-3" aria-hidden />
-              </a>
-              <a
+              </CTA>
+              <CTA
                 href="https://instagram.com/calicutparadise"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-[2px] border border-paper/15 px-3 py-1.5 text-xs text-paper/70 transition-colors hover:border-brass hover:text-brass"
+                variant="secondary"
+                size="sm"
+                arrow="external"
               >
                 Instagram
-                <ArrowUpRight className="size-3" aria-hidden />
-              </a>
-              <a
-                href={siteConfig.links.linktree}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-[2px] border border-paper/15 px-3 py-1.5 text-xs text-paper/70 transition-colors hover:border-brass hover:text-brass"
-              >
+              </CTA>
+              <CTA href={siteConfig.links.linktree} variant="secondary" size="sm" arrow="external">
                 Linktree
-                <ArrowUpRight className="size-3" aria-hidden />
-              </a>
+              </CTA>
             </div>
           </div>
 

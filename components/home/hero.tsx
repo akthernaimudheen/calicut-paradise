@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CalendarDays, Clock, MapPin, Star } from "lucide-react";
+import { CalendarDays, Clock, MapPin, Star } from "lucide-react";
+import { CTA } from "@/components/ui/cta";
 
 export function Hero() {
   return (
@@ -49,14 +49,13 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/menu" className="btn btn-primary max-sm:w-full">
+            <CTA href="/menu" variant="secondary" arrow className="max-sm:w-full">
               Explore the menu
-              <ArrowRight className="size-4" />
-            </Link>
-            <Link href="/reserve" className="btn btn-ghost max-sm:w-full">
-              <CalendarDays className="size-4" />
+            </CTA>
+            <CTA href="/reserve" variant="primary" className="max-sm:w-full">
+              <CalendarDays className="size-4" aria-hidden />
               Reserve a table
-            </Link>
+            </CTA>
           </div>
         </div>
 

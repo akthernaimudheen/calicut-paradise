@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { CTA } from "@/components/ui/cta";
 
 export default function NotFound() {
   return (
@@ -10,13 +9,12 @@ export default function NotFound() {
         The link you followed does not exist. The menu, however, does.
       </p>
       <div className="mt-7 flex flex-wrap gap-3">
-        <Link href="/menu" className="btn btn-primary">
+        <CTA href="/menu" variant="primary" arrow>
           Browse the menu
-          <ArrowRight className="size-4" aria-hidden />
-        </Link>
-        <Link href="/" className="btn btn-ghost">
+        </CTA>
+        <CTA href="/" variant="secondary">
           Back home
-        </Link>
+        </CTA>
       </div>
     </div>
   );

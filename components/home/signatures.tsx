@@ -1,10 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { signatureDishes, allDishes } from "@/lib/menu";
 import { formatRupees } from "@/lib/whatsapp";
 import { QuantityControl } from "@/components/cart/quantity-control";
 import { Reveal } from "@/components/ui/reveal";
+import { CTA } from "@/components/ui/cta";
 
 export function Signatures() {
   const dishPriceMap = new Map(allDishes.map((d) => [d.id, d.price]));
@@ -22,25 +21,23 @@ export function Signatures() {
               Start with these. Add any dish directly to your WhatsApp order enquiry.
             </p>
           </div>
-          <Link
-            href="/menu"
-            className="inline-flex items-center gap-2 text-sm font-medium text-brass hover:text-brass-soft transition-colors"
-          >
+          <CTA href="/menu" variant="tertiary" arrow className="shrink-0">
             Explore all 34 dishes
-            <ArrowRight className="size-4" />
-          </Link>
+          </CTA>
         </div>
 
-        {/* Asymmetric Editorial 2-Up Layout */}
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_1.2fr] lg:items-center">
-          {/* Left: Large Editorial Image Plate */}
-          <Reveal className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px] border border-paper/15 bg-ink-soft">
+        {/* Asymmetric editorial 2-up: both columns start on the same optical
+            line, and the plate fills the column instead of floating inside
+            vertical centring whitespace. */}
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch lg:gap-14">
+          {/* Left: large editorial image plate */}
+          <Reveal className="relative aspect-[4/3] w-full overflow-hidden rounded-[2px] border border-paper/15 bg-ink-soft lg:aspect-auto lg:min-h-[30rem]">
             <Image
-              src="/images/restaurant/calicut-paradise-dining-experience.jpg"
-              alt="A laid table of biryani, grills and coolers in the Calicut Paradise dining room"
+              src="/images/biryani/biryani-mutton-dum.jpg"
+              alt="Mutton dum biryani served on a banana leaf with pappad, raita and date chutney at Calicut Paradise"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover object-center"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink via-ink/80 to-transparent px-5 pb-5 pt-16">
               <p className="text-xs uppercase tracking-[0.14em] text-brass">Dine-In & Takeaway</p>
@@ -77,7 +74,9 @@ export function Signatures() {
                   </p>
 
                   <div className="mt-3.5 flex items-center justify-between">
-                    <span className="text-[11px] text-paper/40">1-tap order enquiry</span>
+                    <span className="text-[10px] uppercase tracking-[0.14em] text-paper/40">
+                    1-tap order enquiry
+                  </span>
                     <QuantityControl dishId={dish.id} tone="quiet" />
                   </div>
                 </div>

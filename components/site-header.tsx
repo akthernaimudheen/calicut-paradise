@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Phone, ShoppingBag, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site";
 import { CalicutParadiseLogo } from "@/components/ui/logo";
+import { CTA } from "@/components/ui/cta";
 import { useCart } from "./cart/cart-provider";
 
 export function SiteHeader() {
@@ -112,12 +113,9 @@ export function SiteHeader() {
               ) : null}
             </button>
 
-            <Link
-              href="/reserve"
-              className="btn btn-primary hidden !min-h-9 !px-4 !text-[13px] sm:inline-flex"
-            >
+            <CTA href="/reserve" variant="primary" size="sm" className="hidden sm:inline-flex">
               Reserve
-            </Link>
+            </CTA>
 
             {/* Hamburger / Close Toggle Button */}
             <button
